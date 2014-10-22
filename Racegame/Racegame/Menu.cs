@@ -16,5 +16,17 @@ namespace Racegame
         {
             InitializeComponent();
         }
+
+        private void PlayGameButton_Click(object sender, EventArgs e)
+        {
+            Game game = new Game();
+            game.Show();
+            this.Hide();
+        }
+
+        private void ExitGameButton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
