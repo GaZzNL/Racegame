@@ -14,11 +14,7 @@ namespace Racegame
     {
         Bitmap Backbuffer;
 
-        const int BallAxisSpeed = 2;
-
-        Point BallPos = new Point(30, 30);
-        Point BallSpeed = new Point(BallAxisSpeed, BallAxisSpeed);
-        const int BallSize = 50;
+        Vehicle vehicle1 = new Vehicle(2);
 
         public Game()
         {
@@ -29,10 +25,7 @@ namespace Racegame
             ControlStyles.AllPaintingInWmPaint |
             ControlStyles.DoubleBuffer, true);
 
-            Timer GameTimer = new Timer();
-            GameTimer.Interval = 10;
-            GameTimer.Tick += new EventHandler(GameTimer_Tick);
-            GameTimer.Start();
+            Core GameTimer = new Core();
 
             this.ResizeEnd += new EventHandler(Game_CreateBackBuffer);
             this.Load += new EventHandler(Game_CreateBackBuffer);
@@ -43,13 +36,13 @@ namespace Racegame
         void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
-                BallSpeed.X = -BallAxisSpeed;
+                Vehicle.BallSpeed.X = -vehicle1.BallAxisSpeed;
             else if (e.KeyCode == Keys.Right)
-                BallSpeed.X = BallAxisSpeed;
+                vehicle1.BallSpeed.X = vehicle1.BallAxisSpeed;
             else if (e.KeyCode == Keys.Up)
-                BallSpeed.Y = -BallAxisSpeed; // Y axis is downwards so -ve is up.
+                vehicle1.BallSpeed.Y = -vehicle1.BallAxisSpeed; // Y axis is downwards so -ve is up.
             else if (e.KeyCode == Keys.Down)
-                BallSpeed.Y = BallAxisSpeed;
+                vehicle1.BallSpeed.Y = vehicle1.BallAxisSpeed;
         }
 
         void Game_Paint(object sender, PaintEventArgs e)
@@ -82,7 +75,7 @@ namespace Racegame
             }
         }
 
-        void GameTimer_Tick(object sender, EventArgs e)
+        public void GameTimer_Tick(object sender, EventArgs e)
         {
             BallPos.X += BallSpeed.X;
             BallPos.Y += BallSpeed.Y;
