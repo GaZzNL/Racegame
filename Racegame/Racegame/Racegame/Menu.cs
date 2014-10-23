@@ -19,8 +19,7 @@ namespace Racegame
 
         private void PlayGameButton_Click(object sender, EventArgs e)
         {
-            Game game = new Game();
-            game.Show();
+            Core core = new Core();
             this.Hide();
         }
 

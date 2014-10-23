@@ -47,11 +47,6 @@ namespace Racegame
             ControlStyles.AllPaintingInWmPaint |
             ControlStyles.DoubleBuffer, true);
 
-            Timer GameTimer = new Timer();
-            GameTimer.Interval = 10;
-            GameTimer.Tick += new EventHandler(GameTimer_Tick);
-            GameTimer.Start();
-
             this.ResizeEnd += new EventHandler(Form1_CreateBackBuffer);
             this.Load += new EventHandler(Form1_CreateBackBuffer);
             this.Paint += new PaintEventHandler(Form1_Paint);
@@ -116,7 +111,7 @@ namespace Racegame
                 Invalidate();
             }
         }
-        void GameTimer_Tick(object sender, EventArgs e)
+        public void GameTimer_Tick(object sender, EventArgs e)
         {
             BallPos.X += BallSpeed.X;
             BallPos.Y += BallSpeed.Y;
