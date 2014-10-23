@@ -12,40 +12,47 @@ namespace Racegame
 {
     public partial class Game : Form
     {
-        Bitmap Backbuffer;
 
-        Vehicle vehicle1 = new Vehicle(2);
+         Bitmap Backbuffer;
+
+        const int BallAxisSpeed = 2;
+
+        Point BallPos = new Point(30, 30);
+        Point BallSpeed = new Point(BallAxisSpeed, BallAxisSpeed);
+        const int BallSize = 50;
 
         public Game()
         {
-            InitializeComponent();
+           InitializeComponent();
 
             this.SetStyle(
             ControlStyles.UserPaint |
             ControlStyles.AllPaintingInWmPaint |
             ControlStyles.DoubleBuffer, true);
 
-            Core GameTimer = new Core();
+            Timer GameTimer = new Timer();
+            GameTimer.Interval = 10;
+            GameTimer.Tick += new EventHandler(GameTimer_Tick);
+            GameTimer.Start();
 
-            this.ResizeEnd += new EventHandler(Game_CreateBackBuffer);
-            this.Load += new EventHandler(Game_CreateBackBuffer);
-            this.Paint += new PaintEventHandler(Game_Paint);
+            this.ResizeEnd += new EventHandler(Form1_CreateBackBuffer);
+            this.Load += new EventHandler(Form1_CreateBackBuffer);
+            this.Paint += new PaintEventHandler(Form1_Paint);
 
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
-        void Form1_KeyDown(object sender, KeyEventArgs e)
+       void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
-                Vehicle.BallSpeed.X = -vehicle1.BallAxisSpeed;
+                BallSpeed.X = -BallAxisSpeed;
             else if (e.KeyCode == Keys.Right)
-                vehicle1.BallSpeed.X = vehicle1.BallAxisSpeed;
+                BallSpeed.X = BallAxisSpeed;
             else if (e.KeyCode == Keys.Up)
-                vehicle1.BallSpeed.Y = -vehicle1.BallAxisSpeed; // Y axis is downwards so -ve is up.
+                BallSpeed.Y = -BallAxisSpeed; // Y axis is downwards so -ve is up.
             else if (e.KeyCode == Keys.Down)
-                vehicle1.BallSpeed.Y = vehicle1.BallAxisSpeed;
+                BallSpeed.Y = BallAxisSpeed;
         }
-
-        void Game_Paint(object sender, PaintEventArgs e)
+        void Form1_Paint(object sender, PaintEventArgs e)
         {
             if (Backbuffer != null)
             {
@@ -53,7 +60,7 @@ namespace Racegame
             }
         }
 
-        void Game_CreateBackBuffer(object sender, EventArgs e)
+        void Form1_CreateBackBuffer(object sender, EventArgs e)
         {
             if (Backbuffer != null)
                 Backbuffer.Dispose();
@@ -74,8 +81,7 @@ namespace Racegame
                 Invalidate();
             }
         }
-
-        public void GameTimer_Tick(object sender, EventArgs e)
+        void GameTimer_Tick(object sender, EventArgs e)
         {
             BallPos.X += BallSpeed.X;
             BallPos.Y += BallSpeed.Y;
@@ -85,5 +91,6 @@ namespace Racegame
 
             // TODO: Add the notion of dying (disable the timer and show a message box or something)
         }
+
     }
 }
