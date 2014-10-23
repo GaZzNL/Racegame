@@ -128,5 +128,10 @@ namespace Racegame
             // TODO: Add the notion of dying (disable the timer and show a message box or something)
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
