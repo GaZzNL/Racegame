@@ -20,11 +20,11 @@ namespace Racegame
         Bitmap Backbuffer;
 
 
-        const int BallAxisSpeed = 2;
+        const int CarOneAxisSpeed = 2;
 
-        Point BallPos = new Point(30, 30);
-        Point BallSpeed = new Point(BallAxisSpeed, BallAxisSpeed);
-        const int BallSize = 30;
+        Point CarOnePos = new Point(30, 30);
+        Point CarOneSpeed = new Point(CarOneAxisSpeed, CarOneAxisSpeed);
+        const int CarOneSize = 30;
         
         /////////////////////////
         /////////////////////////
@@ -57,13 +57,13 @@ namespace Racegame
        void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
-                BallSpeed.X = -BallAxisSpeed;
+                CarOneSpeed.X = -CarOneAxisSpeed;
             else if (e.KeyCode == Keys.Right)
-                BallSpeed.X = BallAxisSpeed;
+                CarOneSpeed.X = CarOneAxisSpeed;
             else if (e.KeyCode == Keys.Up)
-                BallSpeed.Y = -BallAxisSpeed; // Y axis is downwards so -ve is up.
+                CarOneSpeed.Y = -CarOneAxisSpeed; // Y axis is downwards so -ve is up.
             else if (e.KeyCode == Keys.Down)
-                BallSpeed.Y = BallAxisSpeed;
+                CarOneSpeed.Y = CarOneAxisSpeed;
         }
 
         void PlayerTwo_keydown(object sender, KeyEventArgs e)
@@ -103,7 +103,7 @@ namespace Racegame
                 using (var g = Graphics.FromImage(Backbuffer))
                 {
                     g.Clear(Color.White);
-                    g.FillEllipse(Brushes.Black, BallPos.X - BallSize / 2, BallPos.Y - BallSize / 2, BallSize, BallSize);
+                    g.FillEllipse(Brushes.Black, CarOnePos.X - CarOneSize / 2, CarOnePos.Y - CarOneSize / 2, CarOneSize, CarOneSize);
                     g.FillEllipse(Brushes.Red, CarTwoPos.X - CarTwoSize / 2, CarTwoPos.Y - CarTwoSize / 2, CarTwoSize, CarTwoSize);
 
                 }
@@ -113,8 +113,8 @@ namespace Racegame
         }
         public void GameTimer_Tick(object sender, EventArgs e)
         {
-            BallPos.X += BallSpeed.X;
-            BallPos.Y += BallSpeed.Y;
+            CarOnePos.X += CarOneSpeed.X;
+            CarOnePos.Y += CarOneSpeed.Y;
             CarTwoPos.X += CarTwoSpeed.X;
             CarTwoPos.Y+= CarTwoSpeed.Y;
 

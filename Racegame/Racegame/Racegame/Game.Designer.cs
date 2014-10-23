@@ -83,7 +83,7 @@
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Green;
-            this.label5.Location = new System.Drawing.Point(889, 50);
+            this.label5.Location = new System.Drawing.Point(889, 99);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 431);
             this.label5.TabIndex = 14;
