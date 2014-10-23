@@ -12,16 +12,13 @@ namespace Racegame
 {
     public partial class Game : Form
     {
-<<<<<<< HEAD
+
         
         ////////////////////
         ///////////////////
         //Player one
         Bitmap Backbuffer;
-=======
 
-         Bitmap Backbuffer;
->>>>>>> origin/master
 
         const int BallAxisSpeed = 2;
 
@@ -41,13 +38,10 @@ namespace Racegame
 
         public Game()
         {
-<<<<<<< HEAD
+
             InitializeComponent();
              
-=======
-           InitializeComponent();
 
->>>>>>> origin/master
             this.SetStyle(
             ControlStyles.UserPaint |
             ControlStyles.AllPaintingInWmPaint |
@@ -76,7 +70,7 @@ namespace Racegame
             else if (e.KeyCode == Keys.Down)
                 BallSpeed.Y = BallAxisSpeed;
         }
-<<<<<<< HEAD
+
         void PlayerTwo_keydown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.A)
@@ -88,10 +82,9 @@ namespace Racegame
             else if (e.KeyCode == Keys.S)
                 CarTwoSpeed.Y = CarTwoAxisSpeed;
         }
-        void Game_Paint(object sender, PaintEventArgs e)
-=======
+
         void Form1_Paint(object sender, PaintEventArgs e)
->>>>>>> origin/master
+
         {
             if (Backbuffer != null)
             {
