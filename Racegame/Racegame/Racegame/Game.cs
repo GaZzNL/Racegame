@@ -12,19 +12,42 @@ namespace Racegame
 {
     public partial class Game : Form
     {
+<<<<<<< HEAD
+        
+        ////////////////////
+        ///////////////////
+        //Player one
+        Bitmap Backbuffer;
+=======
 
          Bitmap Backbuffer;
+>>>>>>> origin/master
 
         const int BallAxisSpeed = 2;
 
         Point BallPos = new Point(30, 30);
         Point BallSpeed = new Point(BallAxisSpeed, BallAxisSpeed);
-        const int BallSize = 50;
+        const int BallSize = 30;
+        
+        /////////////////////////
+        /////////////////////////
+        //player two 
+        //Bitmap backbuffer2;
+        const int CarTwoAxisSpeed = 2;
+        Point CarTwoPos = new Point(60, 60);
+        Point CarTwoSpeed = new Point(CarTwoAxisSpeed, CarTwoAxisSpeed);
+        const int CarTwoSize = 30;
+ 
 
         public Game()
         {
+<<<<<<< HEAD
+            InitializeComponent();
+             
+=======
            InitializeComponent();
 
+>>>>>>> origin/master
             this.SetStyle(
             ControlStyles.UserPaint |
             ControlStyles.AllPaintingInWmPaint |
@@ -40,6 +63,7 @@ namespace Racegame
             this.Paint += new PaintEventHandler(Form1_Paint);
 
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
+            this.KeyDown += new KeyEventHandler(PlayerTwo_keydown);
         }
        void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -52,13 +76,29 @@ namespace Racegame
             else if (e.KeyCode == Keys.Down)
                 BallSpeed.Y = BallAxisSpeed;
         }
+<<<<<<< HEAD
+        void PlayerTwo_keydown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.A)
+                CarTwoSpeed.X = -CarTwoAxisSpeed;
+            else if (e.KeyCode == Keys.D)
+                CarTwoSpeed.X = CarTwoAxisSpeed;
+            else if (e.KeyCode == Keys.W)
+                CarTwoSpeed.Y = -CarTwoAxisSpeed;
+            else if (e.KeyCode == Keys.S)
+                CarTwoSpeed.Y = CarTwoAxisSpeed;
+        }
+        void Game_Paint(object sender, PaintEventArgs e)
+=======
         void Form1_Paint(object sender, PaintEventArgs e)
+>>>>>>> origin/master
         {
             if (Backbuffer != null)
             {
                 e.Graphics.DrawImageUnscaled(Backbuffer, Point.Empty);
             }
         }
+      
 
         void Form1_CreateBackBuffer(object sender, EventArgs e)
         {
@@ -76,8 +116,10 @@ namespace Racegame
                 {
                     g.Clear(Color.White);
                     g.FillEllipse(Brushes.Black, BallPos.X - BallSize / 2, BallPos.Y - BallSize / 2, BallSize, BallSize);
-                }
+                    g.FillEllipse(Brushes.Red, CarTwoPos.X - CarTwoSize / 2, CarTwoPos.Y - CarTwoSize / 2, CarTwoSize, CarTwoSize);
 
+                }
+                
                 Invalidate();
             }
         }
@@ -85,7 +127,8 @@ namespace Racegame
         {
             BallPos.X += BallSpeed.X;
             BallPos.Y += BallSpeed.Y;
-
+            CarTwoPos.X += CarTwoSpeed.X;
+            CarTwoPos.Y+= CarTwoSpeed.Y;
 
             Draw();
 
