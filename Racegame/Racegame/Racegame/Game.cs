@@ -13,35 +13,35 @@ namespace Racegame
     public partial class Game : Form
     {
 
-        
+        Bitmap Backbuffer;
+
         ////////////////////
         ///////////////////
         //Player one
-        Bitmap Backbuffer;
 
-
-        const int CarOneAxisSpeed = 2;
+        /*const int CarOneAxisSpeed = 2;
 
         Point CarOnePos = new Point(30, 30);
         Point CarOneSpeed = new Point(CarOneAxisSpeed, CarOneAxisSpeed);
         const int CarOneSize = 30;
-        
+        */
         /////////////////////////
         /////////////////////////
         //player two 
         //Bitmap backbuffer2;
-        const int CarTwoAxisSpeed = 2;
+        /*const int CarTwoAxisSpeed = 2;
         Point CarTwoPos = new Point(60, 60);
         Point CarTwoSpeed = new Point(CarTwoAxisSpeed, CarTwoAxisSpeed);
-        const int CarTwoSize = 30;
- 
+        const int CarTwoSize = 30;*/
+
+        //De voertuigen worden gemaakt
+        Vehicle vehicle1 = new Vehicle(60);
+        Vehicle vehicle2 = new Vehicle(30);
 
         public Game()
         {
-
             InitializeComponent();
              
-
             this.SetStyle(
             ControlStyles.UserPaint |
             ControlStyles.AllPaintingInWmPaint |
@@ -54,16 +54,16 @@ namespace Racegame
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
             this.KeyDown += new KeyEventHandler(PlayerTwo_keydown);
         }
-       void Form1_KeyDown(object sender, KeyEventArgs e)
+        void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
-                CarOneSpeed.X = -CarOneAxisSpeed;
+                vehicle1.Speed.X = -vehicle1.AxisSpeed;
             else if (e.KeyCode == Keys.Right)
-                CarOneSpeed.X = CarOneAxisSpeed;
+                vehicle1.Speed.X = vehicle1.AxisSpeed;
             else if (e.KeyCode == Keys.Up)
-                CarOneSpeed.Y = -CarOneAxisSpeed; // Y axis is downwards so -ve is up.
+                vehicle1.Speed.Y = -vehicle1.AxisSpeed; // Y axis is downwards so -ve is up.
             else if (e.KeyCode == Keys.Down)
-                CarOneSpeed.Y = CarOneAxisSpeed;
+                vehicle1.Speed.Y = vehicle1.AxisSpeed;
         }
 
         void PlayerTwo_keydown(object sender, KeyEventArgs e)
