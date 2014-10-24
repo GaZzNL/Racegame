@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.BorderUp = new System.Windows.Forms.Label();
             this.BorderDown = new System.Windows.Forms.Label();
             this.BorderLeft = new System.Windows.Forms.Label();
@@ -40,7 +41,7 @@
             this.BorderUp.ForeColor = System.Drawing.Color.Black;
             this.BorderUp.Location = new System.Drawing.Point(0, 0);
             this.BorderUp.Name = "BorderUp";
-            this.BorderUp.Size = new System.Drawing.Size(1008, 5);
+            this.BorderUp.Size = new System.Drawing.Size(1003, 5);
             this.BorderUp.TabIndex = 20;
             this.BorderUp.Text = "label10";
             // 
@@ -75,7 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Racegame.Properties.Resources.Naamloos;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.BorderRight);

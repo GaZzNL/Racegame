@@ -15,8 +15,12 @@ namespace Racegame
 
         Bitmap Backbuffer;
         public Vehicle vehicle1;
-        public Vehicle vehicle2;                               
+        public Vehicle vehicle2;
 
+        public int x1;
+        public int y1;
+        public int x2;
+        public int y2;
         /// <summary>
         /// De constructor van de game class
         /// </summary>
@@ -37,6 +41,7 @@ namespace Racegame
 
             vehicle1 = new Vehicle(30);
             vehicle2 = new Vehicle(25);
+            vehicle1.Position = new Point(x1, y1);          
         }
 
         //Keybinding voor de twee objecten
@@ -95,7 +100,9 @@ namespace Racegame
                 vehicle2.Position.Y += vehicle2.Speed.Y;
                 Invalidate();
             }
-        }                                      
+        }
+       
+                              
     }
 }
 
