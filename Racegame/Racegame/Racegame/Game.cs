@@ -87,29 +87,14 @@ namespace Racegame
                     vehicle1.Draw(g);
                     vehicle2.Draw(g, "red");
                 }
-                
-                Invalidate();
-            }
-<<<<<<< HEAD
-        }
-        public void GameTimer_Tick(object sender, EventArgs e)
-        {
-            CarOnePos.X += CarOneSpeed.X;
-            CarOnePos.Y += CarOneSpeed.Y;
-            CarTwoPos.X += CarTwoSpeed.X;
-            CarTwoPos.Y+= CarTwoSpeed.Y;
-
-            Draw();
-            // TODO: Add the notion of dying (disable the timer and show a message box or something)
-=======
-            vehicle1.Position.X += vehicle1.Speed.X;
+                            vehicle1.Position.X += vehicle1.Speed.X;
             vehicle1.Position.Y += vehicle1.Speed.Y;
             vehicle2.Position.X += vehicle2.Speed.X;
             vehicle2.Position.Y += vehicle2.Speed.Y;
->>>>>>> origin/master
+                Invalidate();
+            }
+
         }
-
-
         private void label3_Click(object sender, EventArgs e)
         {
 
