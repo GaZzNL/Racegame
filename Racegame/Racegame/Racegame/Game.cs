@@ -15,15 +15,15 @@ namespace Racegame
 
         Bitmap Backbuffer;
         public Vehicle vehicle1;
-        public Vehicle vehicle2;
-        
+        public Vehicle vehicle2;                               
+
         /// <summary>
         /// De constructor van de game class
         /// </summary>
         public Game()
         {
             InitializeComponent();
-            
+
             this.SetStyle(
             ControlStyles.UserPaint |
             ControlStyles.AllPaintingInWmPaint |
@@ -75,7 +75,7 @@ namespace Racegame
 
             Backbuffer = new Bitmap(ClientSize.Width, ClientSize.Height);
         }
-        
+
         //Tekent de objecten op je juiste locaties
         public void Draw()
         {
@@ -83,21 +83,24 @@ namespace Racegame
             {
                 using (var g = Graphics.FromImage(Backbuffer))
                 {
-                    g.Clear(Color.White);
+                    
+                    g.Clear(Color.Transparent);
                     vehicle1.Draw(g);
                     vehicle2.Draw(g, "red");
                 }
-                            vehicle1.Position.X += vehicle1.Speed.X;
-            vehicle1.Position.Y += vehicle1.Speed.Y;
-            vehicle2.Position.X += vehicle2.Speed.X;
-            vehicle2.Position.Y += vehicle2.Speed.Y;
+
+                vehicle1.Position.X += vehicle1.Speed.X;
+                vehicle1.Position.Y += vehicle1.Speed.Y;
+                vehicle2.Position.X += vehicle2.Speed.X;
+                vehicle2.Position.Y += vehicle2.Speed.Y;
                 Invalidate();
             }
-
-        }
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+        }                                      
     }
 }
+
+        
+   
+
+        
+        

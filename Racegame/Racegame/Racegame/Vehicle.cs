@@ -33,7 +33,7 @@ namespace Racegame
         /// <param name="g">De type</param>
         public void Draw(Graphics g)
         {
-            g.FillEllipse(Brushes.Blue, this.Position.X - this.CarSize / 2, this.Position.Y - this.CarSize / 2, this.CarSize, this.CarSize);
+            g.FillRectangle(Brushes.Blue, this.Position.X - this.CarSize / 2, this.Position.Y - this.CarSize / 2, this.CarSize, this.CarSize);
         }
         /// <summary>
         /// Overload van het eerdere methode
@@ -43,9 +43,9 @@ namespace Racegame
         public void Draw(Graphics g, String b)
         {
             if (b == "red")
-                g.FillEllipse(Brushes.Red, this.Position.X - this.CarSize / 2, this.Position.Y - this.CarSize / 2, this.CarSize, this.CarSize);
+                g.FillRectangle(Brushes.Red, this.Position.X - this.CarSize / 2, this.Position.Y - this.CarSize / 2, this.CarSize, this.CarSize);
             if (b == "yellow")
-                g.FillEllipse(Brushes.Yellow, this.Position.X - this.CarSize / 2, this.Position.Y - this.CarSize / 2, this.CarSize, this.CarSize);
+                g.FillRectangle(Brushes.Yellow, this.Position.X - this.CarSize / 2, this.Position.Y - this.CarSize / 2, this.CarSize, this.CarSize);
         }
     }
 }
