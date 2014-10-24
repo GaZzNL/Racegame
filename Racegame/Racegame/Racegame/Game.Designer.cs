@@ -38,6 +38,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,9 +87,9 @@
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.Green;
-            this.label5.Location = new System.Drawing.Point(889, 99);
+            this.label5.Location = new System.Drawing.Point(889, 50);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 431);
+            this.label5.Size = new System.Drawing.Size(119, 480);
             this.label5.TabIndex = 14;
             this.label5.Text = "label5";
             // 
@@ -136,11 +140,51 @@
             this.label3.Text = "label3";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label10.Location = new System.Drawing.Point(0, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(1008, 5);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "label10";
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label11.Location = new System.Drawing.Point(0, 724);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(1008, 5);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "label11";
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label12.Location = new System.Drawing.Point(0, 5);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(5, 724);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "label12";
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label13.Location = new System.Drawing.Point(1003, 5);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(5, 724);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "label13";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -174,5 +218,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
