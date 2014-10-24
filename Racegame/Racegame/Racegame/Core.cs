@@ -3,23 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Racegame
 {
     class Core
     {
-        private System.Windows.Forms.Timer GameTimer;
+        private Timer GameTimer;
         Game game = new Game();
 
         //Contructor van de Core
         public Core()
         {
-            GameTimer = new System.Windows.Forms.Timer();
+            GameTimer = new Timer();
             //Zet de steld de snelheid in, in nanosecondes
             GameTimer.Interval = 10;
-            GameTimer.Tick += new EventHandler(game.GameTimer_Tick);//
+            GameTimer.Tick += new EventHandler(GameTimer_Tick);//Moet je locatie functie zoeken
             GameTimer.Start();
             game.Show();
+        }
+        void GameTimer_Tick(object sender, EventArgs e)
+        {
+            game.Draw();
         }
     }
 }
