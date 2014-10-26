@@ -44,24 +44,24 @@ namespace Racegame
             vehicle1.Position = new Point(x1, y1);          
         }
 
-        //Keybinding voor de twee objecten
+        //Keybinding voor de twee objecten + Snelheid
         void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.Left && vehicle1.Speed.X >= -3)
                 vehicle1.Speed.X -= vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.Right)
+            else if (e.KeyCode == Keys.Right && vehicle1.Speed.X <= 3)
                 vehicle1.Speed.X += vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.Up)
+            else if (e.KeyCode == Keys.Up && vehicle1.Speed.Y >= -3)
                 vehicle1.Speed.Y -= vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.Down)
+            else if (e.KeyCode == Keys.Down && vehicle1.Speed.Y <= 3)
                 vehicle1.Speed.Y += vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.A)
+            else if (e.KeyCode == Keys.A && vehicle2.Speed.X >= -2)
                 vehicle2.Speed.X -= vehicle2.AxisSpeed;
-            else if (e.KeyCode == Keys.D)
+            else if (e.KeyCode == Keys.D && vehicle2.Speed.X <= 2)
                 vehicle2.Speed.X += vehicle2.AxisSpeed;
-            else if (e.KeyCode == Keys.W)
+            else if (e.KeyCode == Keys.W && vehicle2.Speed.Y >= -4)
                 vehicle2.Speed.Y -= vehicle2.AxisSpeed;
-            else if (e.KeyCode == Keys.S)
+            else if (e.KeyCode == Keys.S && vehicle2.Speed.Y <= 1)
                 vehicle2.Speed.Y += vehicle2.AxisSpeed;
         }
 
