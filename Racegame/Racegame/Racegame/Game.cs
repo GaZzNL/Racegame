@@ -35,8 +35,8 @@ namespace Racegame
 
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
 
-            vehicle1 = new Vehicle(745, 75, "red");
-            vehicle2 = new Vehicle(25, 125, "blue");
+            vehicle1 = new Vehicle(745, 75, "Red");
+            vehicle2 = new Vehicle(25, 125, "Blue");
 
             Controls.Add(vehicle1.picBox);
             Controls.Add(vehicle2.picBox);        

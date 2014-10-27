@@ -26,10 +26,8 @@ namespace Racegame
             this.picBox = new PictureBox();
             this.picBox.Size = new Size(30, 30);
             this.picBox.Location = new Point(value, value2);
-            if (k == "blue") picBox.BackColor = Color.Blue;
-            if (k == "red") picBox.BackColor = Color.Red;
+            picBox.BackColor = Color.FromName("k");
 
-            //this.CarSize = 30;
             this.AxisSpeed = 2;
         }
         /// <summary>
