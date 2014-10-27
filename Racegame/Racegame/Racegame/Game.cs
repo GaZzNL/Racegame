@@ -89,7 +89,7 @@ namespace Racegame
                     
                     g.Clear(Color.Transparent);
                     vehicle1.Draw(g);
-                    vehicle2.Draw(g, "red");
+                    vehicle2.Draw(g);
                 }
 
                 vehicle1.picBox.Location = new Point(
