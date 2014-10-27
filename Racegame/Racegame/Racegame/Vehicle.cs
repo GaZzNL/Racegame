@@ -30,7 +30,7 @@ namespace Racegame
             if (k == "red") picBox.BackColor = Color.Red;
 
             //this.CarSize = 30;
-            //this.AxisSpeed = 2;*/
+            this.AxisSpeed = 2;
         }
         /// <summary>
         /// Tekent het object op de juiste locatie
