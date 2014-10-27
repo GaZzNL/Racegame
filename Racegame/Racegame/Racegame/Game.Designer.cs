@@ -33,6 +33,7 @@
             this.BorderDown = new System.Windows.Forms.Label();
             this.BorderLeft = new System.Windows.Forms.Label();
             this.BorderRight = new System.Windows.Forms.Label();
+            this.MousePosition = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BorderUp
@@ -72,6 +73,14 @@
             this.BorderRight.TabIndex = 23;
             this.BorderRight.Text = "label13";
             // 
+            // MousePosition
+            // 
+            this.MousePosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MousePosition.Location = new System.Drawing.Point(761, 5);
+            this.MousePosition.Name = "MousePosition";
+            this.MousePosition.Size = new System.Drawing.Size(235, 49);
+            this.MousePosition.TabIndex = 24;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -79,6 +88,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.MousePosition);
             this.Controls.Add(this.BorderRight);
             this.Controls.Add(this.BorderLeft);
             this.Controls.Add(this.BorderDown);
@@ -98,5 +108,6 @@
         private System.Windows.Forms.Label BorderDown;
         private System.Windows.Forms.Label BorderLeft;
         private System.Windows.Forms.Label BorderRight;
+        private System.Windows.Forms.Label MousePosition;
     }
 }

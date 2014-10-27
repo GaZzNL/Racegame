@@ -15,12 +15,15 @@ namespace Racegame
 
         Bitmap Backbuffer;
         public Vehicle vehicle1;
-        public Vehicle vehicle2;
+        public Vehicle vehicle2;       
 
         public int x1;
         public int y1;
         public int x2;
-        public int y2;
+        public int y2;        
+        Point position = Cursor.Position;
+        
+
         /// <summary>
         /// De constructor van de game class
         /// </summary>
@@ -93,16 +96,19 @@ namespace Racegame
                     vehicle1.Draw(g);
                     vehicle2.Draw(g, "red");
                 }
+                Point position = Cursor.Position;
+                Console.WriteLine(position.X + " " + position.Y);
+                Point relativeToForm = this.PointToClient(position);
+                MousePosition.Text = Convert.ToString(relativeToForm);
+                
 
                 vehicle1.Position.X += vehicle1.Speed.X;
                 vehicle1.Position.Y += vehicle1.Speed.Y;
                 vehicle2.Position.X += vehicle2.Speed.X;
                 vehicle2.Position.Y += vehicle2.Speed.Y;
                 Invalidate();
-            }
+            } 
         }
-       
-                              
     }
 }
 
@@ -110,4 +116,4 @@ namespace Racegame
    
 
         
-        
+          
