@@ -42,29 +42,31 @@ namespace Racegame
 
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
 
-            vehicle1 = new Vehicle(30);
-            vehicle2 = new Vehicle(25);
-            vehicle1.Position = new Point(x1, y1);          
+            vehicle1 = new Vehicle(745, 75, "red");
+            vehicle2 = new Vehicle(25, 125, "blue");
+
+            Controls.Add(vehicle1.picBox);
+            Controls.Add(vehicle2.picBox);        
         }
 
         //Keybinding voor de twee objecten + Snelheid
         void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Left && vehicle1.Speed.X >= -3)
+            if (e.KeyCode == Keys.Left)
                 vehicle1.Speed.X -= vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.Right && vehicle1.Speed.X <= 3)
+            else if (e.KeyCode == Keys.Right)
                 vehicle1.Speed.X += vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.Up && vehicle1.Speed.Y >= -3)
+            else if (e.KeyCode == Keys.Up)
                 vehicle1.Speed.Y -= vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.Down && vehicle1.Speed.Y <= 3)
+            else if (e.KeyCode == Keys.Down)
                 vehicle1.Speed.Y += vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.A && vehicle2.Speed.X >= -2)
+            else if (e.KeyCode == Keys.A)
                 vehicle2.Speed.X -= vehicle2.AxisSpeed;
-            else if (e.KeyCode == Keys.D && vehicle2.Speed.X <= 2)
+            else if (e.KeyCode == Keys.D)
                 vehicle2.Speed.X += vehicle2.AxisSpeed;
-            else if (e.KeyCode == Keys.W && vehicle2.Speed.Y >= -4)
+            else if (e.KeyCode == Keys.W)
                 vehicle2.Speed.Y -= vehicle2.AxisSpeed;
-            else if (e.KeyCode == Keys.S && vehicle2.Speed.Y <= 1)
+            else if (e.KeyCode == Keys.S)
                 vehicle2.Speed.Y += vehicle2.AxisSpeed;
         }
 
@@ -100,12 +102,16 @@ namespace Racegame
                 Console.WriteLine(position.X + " " + position.Y);
                 Point relativeToForm = this.PointToClient(position);
                 MousePosition.Text = Convert.ToString(relativeToForm);
-                
 
-                vehicle1.Position.X += vehicle1.Speed.X;
-                vehicle1.Position.Y += vehicle1.Speed.Y;
-                vehicle2.Position.X += vehicle2.Speed.X;
-                vehicle2.Position.Y += vehicle2.Speed.Y;
+
+                vehicle1.picBox.Location = new Point(
+                    +vehicle1.Speed.X,
+                    +vehicle1.Speed.Y
+                );
+                vehicle2.picBox.Location = new Point(
+                    +vehicle2.Speed.X,
+                    +vehicle2.Speed.Y
+                );
                 Invalidate();
             } 
         }
