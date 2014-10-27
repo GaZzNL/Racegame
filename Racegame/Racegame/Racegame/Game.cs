@@ -44,7 +44,10 @@ namespace Racegame
 
             vehicle1 = new Vehicle(30);
             vehicle2 = new Vehicle(25);
-            vehicle1.Position = new Point(x1, y1);          
+            
+            // De startpositie van auto 1
+            vehicle1.Position = new Point(745, 75);
+            vehicle2.Position = new Point(745, 115);
         }
 
         //Keybinding voor de twee objecten + Snelheid

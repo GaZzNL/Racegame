@@ -34,6 +34,7 @@
             this.BorderLeft = new System.Windows.Forms.Label();
             this.BorderRight = new System.Windows.Forms.Label();
             this.MousePosition = new System.Windows.Forms.Label();
+            this.Finish = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BorderUp
@@ -81,6 +82,14 @@
             this.MousePosition.Size = new System.Drawing.Size(235, 49);
             this.MousePosition.TabIndex = 24;
             // 
+            // Finish
+            // 
+            this.Finish.BackColor = System.Drawing.SystemColors.MenuText;
+            this.Finish.Location = new System.Drawing.Point(687, 55);
+            this.Finish.Name = "Finish";
+            this.Finish.Size = new System.Drawing.Size(26, 84);
+            this.Finish.TabIndex = 25;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -88,6 +97,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.Finish);
             this.Controls.Add(this.MousePosition);
             this.Controls.Add(this.BorderRight);
             this.Controls.Add(this.BorderLeft);
@@ -109,5 +119,6 @@
         private System.Windows.Forms.Label BorderLeft;
         private System.Windows.Forms.Label BorderRight;
         private System.Windows.Forms.Label MousePosition;
+        private System.Windows.Forms.Label Finish;
     }
 }
