@@ -114,19 +114,19 @@ namespace Racegame
                     vehicle1.Position.X += vehicle1.Speed.X;
                     vehicle1.Position.Y += vehicle1.Speed.Y;
                 }
-
+                //Als de voertuig tegen de grens aanzit word hij gestopt
                 else
                 {
                     vehicle1.Position.X -= vehicle1.Speed.X;
                     vehicle1.Position.Y -= vehicle1.Speed.Y;
                 }
-
+                //Hier word gecheckt als de voertuig zich mag verplaatsen op de locatie
                 if (vehicle2.Position.X > 0 & vehicle2.Position.Y > 0 & vehicle2.Position.X < 990 & vehicle2.Position.Y < 700)
                 {
                     vehicle2.Position.X += vehicle2.Speed.X;
                     vehicle2.Position.Y += vehicle2.Speed.Y;
                 }
-                
+                //Als de voertuig tegen de grens aanzit word hij gestopt
                 else
                 {
                     vehicle2.Position.X -= vehicle2.Speed.X;
@@ -136,22 +136,9 @@ namespace Racegame
                 //De auto(als in voertuig) debugger!
                 MousePosition.Text = Convert.ToString(vehicle1.Position);
                 
-                //else
-                //niets doen, oude positie is op de rand
-                //of evt de snelheid aanpassen
-
-                //nieuwe positie bekend
                 //wat is de kleur van de huidige positie
-
-                //var image = new Bitmap("");
-                
-                //kleur = image.GetPixel()
-                //if kleur == grijs
-                //gewoon
-                //if kleur == groen
-                //speed / 2
-                //if kleur == blauw
-                // tanken!
+                //Checkt de kleur waar vehicle1 op positie staat
+                Color kleur = Backbuffer.GetPixel(vehicle1.Position.X, vehicle1.Position.Y);
 
                 Invalidate();
             }
