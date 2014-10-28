@@ -17,10 +17,7 @@ namespace Racegame
         public Vehicle vehicle1;
         public Vehicle vehicle2;
 
-        public int x1;
-        public int y1;
-        public int x2;
-        public int y2;
+
         /// <summary>
         /// De constructor van de game class
         /// </summary>
@@ -39,9 +36,8 @@ namespace Racegame
 
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
 
-            vehicle1 = new Vehicle(30);
-            vehicle2 = new Vehicle(25);
-            vehicle1.Position = new Point(x1, y1);
+            vehicle1 = new Vehicle(300);
+            vehicle2 = new Vehicle(280);
         }
 
         //Keybinding voor de twee objecten + Snelheid
@@ -96,18 +92,40 @@ namespace Racegame
 
                 //hier check je of de autos niet van het scherm rijden
 
-                //if auto niet van scherm af gaat
-                vehicle1.Position.X += vehicle1.Speed.X;
-                vehicle1.Position.Y += vehicle1.Speed.Y;
-                vehicle2.Position.X += vehicle2.Speed.X;
-                vehicle2.Position.Y += vehicle2.Speed.Y;
+             /*   if (vehicle1.Position.X > 20 | vehicle1.Position.Y > 20 & vehicle1.Position.X < 1004 | vehicle1.Position.Y < 748)
+                {
+                    vehicle1.Position.X += vehicle1.Speed.X;
+                    vehicle1.Position.Y += vehicle1.Speed.Y;
+                }
+
+                else
+                {
+                    vehicle1.Position.X -= vehicle1.Speed.X;
+                    vehicle1.Position.Y -= vehicle1.Speed.Y;
+                }
+
+                if (vehicle2.Position.X > 0 | vehicle2.Position.Y > 0 & vehicle2.Position.X < 1024 | vehicle2.Position.Y < 768)
+                {
+                    vehicle2.Position.X += vehicle2.Speed.X;
+                    vehicle2.Position.Y += vehicle2.Speed.Y;
+                }
+                
+                else
+                {
+                    vehicle2.Position.X -= vehicle2.Speed.X;
+                    vehicle2.Position.Y -= vehicle2.Speed.Y;
+                } */
+                
+                
                 //else
                 //niets doen, oude positie is op de rand
                 //of evt de snelheid aanpassen
 
                 //nieuwe positie bekend
                 //wat is de kleur van de huidige positie
-                var image = new Bitmap("");
+
+                //var image = new Bitmap("");
+                
                 //kleur = image.GetPixel()
                 //if kleur == grijs
                 //gewoon
