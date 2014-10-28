@@ -92,7 +92,7 @@ namespace Racegame
 
                 //hier check je of de autos niet van het scherm rijden
 
-             /*   if (vehicle1.Position.X > 20 | vehicle1.Position.Y > 20 & vehicle1.Position.X < 1004 | vehicle1.Position.Y < 748)
+                if (vehicle1.Position.X > 0 & vehicle1.Position.Y > 0 & vehicle1.Position.X < 990 & vehicle1.Position.Y < 700)
                 {
                     vehicle1.Position.X += vehicle1.Speed.X;
                     vehicle1.Position.Y += vehicle1.Speed.Y;
@@ -104,7 +104,7 @@ namespace Racegame
                     vehicle1.Position.Y -= vehicle1.Speed.Y;
                 }
 
-                if (vehicle2.Position.X > 0 | vehicle2.Position.Y > 0 & vehicle2.Position.X < 1024 | vehicle2.Position.Y < 768)
+                if (vehicle2.Position.X > 0 & vehicle2.Position.Y > 0 & vehicle2.Position.X < 990 & vehicle2.Position.Y < 700)
                 {
                     vehicle2.Position.X += vehicle2.Speed.X;
                     vehicle2.Position.Y += vehicle2.Speed.Y;
@@ -114,8 +114,10 @@ namespace Racegame
                 {
                     vehicle2.Position.X -= vehicle2.Speed.X;
                     vehicle2.Position.Y -= vehicle2.Speed.Y;
-                } */
+                }
                 
+                //De auto(als in voertuig) debugger!
+                MousePosition.Text = Convert.ToString(vehicle1.Position.X + " " + vehicle1.Position.Y);
                 
                 //else
                 //niets doen, oude positie is op de rand
