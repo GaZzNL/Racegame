@@ -36,8 +36,8 @@ namespace Racegame
 
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
 
-            vehicle1 = new Vehicle(300);
-            vehicle2 = new Vehicle(280);
+            vehicle1 = new Vehicle(400);
+            vehicle2 = new Vehicle(400);
         }
 
         //Keybinding voor de twee objecten + Snelheid
@@ -90,8 +90,25 @@ namespace Racegame
                     vehicle2.Draw(g, "red");
                 }
 
-                //hier check je of de autos niet van het scherm rijden
-
+                //hier check je of de autos niet van het scherm rijden/ Als de voertuig "Te verweg is van de baan" word hij op de start positie gezet
+                if (vehicle1.Position.X < -10 | vehicle1.Position.Y < -10 | vehicle1.Position.X > 1000 | vehicle1.Position.Y > 710)
+                {
+                    vehicle1.Position.X = 768;
+                    vehicle1.Position.Y = 70;
+                }
+                //Zelfde geld voor voertuig2
+                if (vehicle2.Position.X < -10 | vehicle2.Position.Y < -10 | vehicle2.Position.X > 1000 | vehicle2.Position.Y > 710)
+                {
+                    vehicle2.Position.X = 768;
+                    vehicle2.Position.Y = 70;
+                }
+                //Hier word gecheckt als de voertuig zich mag verplaatsen op de locatie
+                if (vehicle2.Position.X < 0 & vehicle2.Position.Y < 0)
+                {
+                    vehicle2.Position.X = 758;
+                    vehicle2.Position.Y = 70;
+                }
+                //Hier word gecheckt als de voertuig zich mag verplaatsen op de locatie
                 if (vehicle1.Position.X > 0 & vehicle1.Position.Y > 0 & vehicle1.Position.X < 990 & vehicle1.Position.Y < 700)
                 {
                     vehicle1.Position.X += vehicle1.Speed.X;
@@ -117,7 +134,7 @@ namespace Racegame
                 }
                 
                 //De auto(als in voertuig) debugger!
-                MousePosition.Text = Convert.ToString(vehicle1.Position.X + " " + vehicle1.Position.Y);
+                MousePosition.Text = Convert.ToString(vehicle1.Position);
                 
                 //else
                 //niets doen, oude positie is op de rand
