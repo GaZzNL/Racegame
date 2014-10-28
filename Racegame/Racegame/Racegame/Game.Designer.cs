@@ -29,48 +29,60 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
-            this.BorderUp = new System.Windows.Forms.Label();
-            this.BorderDown = new System.Windows.Forms.Label();
-            this.BorderLeft = new System.Windows.Forms.Label();
-            this.BorderRight = new System.Windows.Forms.Label();
+            this.MousePosition = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // BorderUp
+            // MousePosition
             // 
-            this.BorderUp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BorderUp.ForeColor = System.Drawing.Color.Black;
-            this.BorderUp.Location = new System.Drawing.Point(0, 0);
-            this.BorderUp.Name = "BorderUp";
-            this.BorderUp.Size = new System.Drawing.Size(1003, 5);
-            this.BorderUp.TabIndex = 20;
-            this.BorderUp.Text = "label10";
+            this.MousePosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MousePosition.Location = new System.Drawing.Point(761, 9);
+            this.MousePosition.Name = "MousePosition";
+            this.MousePosition.Size = new System.Drawing.Size(235, 49);
+            this.MousePosition.TabIndex = 24;
             // 
-            // BorderDown
+            // pictureBox1
             // 
-            this.BorderDown.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BorderDown.Location = new System.Drawing.Point(0, 724);
-            this.BorderDown.Name = "BorderDown";
-            this.BorderDown.Size = new System.Drawing.Size(1008, 5);
-            this.BorderDown.TabIndex = 21;
-            this.BorderDown.Text = "label11";
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBox1.Location = new System.Drawing.Point(0, -6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1008, 14);
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
             // 
-            // BorderLeft
+            // pictureBox2
             // 
-            this.BorderLeft.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BorderLeft.Location = new System.Drawing.Point(0, 5);
-            this.BorderLeft.Name = "BorderLeft";
-            this.BorderLeft.Size = new System.Drawing.Size(5, 724);
-            this.BorderLeft.TabIndex = 22;
-            this.BorderLeft.Text = "label12";
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBox2.Location = new System.Drawing.Point(998, -6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(10, 735);
+            this.pictureBox2.TabIndex = 26;
+            this.pictureBox2.TabStop = false;
             // 
-            // BorderRight
+            // pictureBox3
             // 
-            this.BorderRight.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BorderRight.Location = new System.Drawing.Point(1003, 5);
-            this.BorderRight.Name = "BorderRight";
-            this.BorderRight.Size = new System.Drawing.Size(5, 724);
-            this.BorderRight.TabIndex = 23;
-            this.BorderRight.Text = "label13";
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBox3.Location = new System.Drawing.Point(0, -6);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(10, 735);
+            this.pictureBox3.TabIndex = 27;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 719);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(1008, 10);
+            this.pictureBox4.TabIndex = 28;
+            this.pictureBox4.TabStop = false;
             // 
             // Game
             // 
@@ -79,24 +91,30 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.BorderRight);
-            this.Controls.Add(this.BorderLeft);
-            this.Controls.Add(this.BorderDown);
-            this.Controls.Add(this.BorderUp);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.MousePosition);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximumSize = new System.Drawing.Size(1024, 768);
             this.MinimumSize = new System.Drawing.Size(1024, 726);
             this.Name = "Game";
             this.Text = "Game";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label BorderUp;
-        private System.Windows.Forms.Label BorderDown;
-        private System.Windows.Forms.Label BorderLeft;
-        private System.Windows.Forms.Label BorderRight;
+        private System.Windows.Forms.Label MousePosition;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

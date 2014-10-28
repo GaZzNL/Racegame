@@ -15,16 +15,19 @@ namespace Racegame
         public Point Speed;
         public int CarSize { get; set; }
         public int AxisSpeed { get; set; }
+        public PictureBox picBox { get; set; }
 
         /// <summary>
         /// De constructor
         /// </summary>
         /// <param name="value">De locatie van de vehicle</param>
-        public Vehicle(int value)
+        public Vehicle(int value, int value2, String k)
         {
-            this.Position = new Point(value, value);
-            this.Speed = new Point(0, 0);
-            this.CarSize = 30;
+            this.picBox = new PictureBox();
+            this.picBox.Size = new Size(30, 30);
+            this.picBox.Location = new Point(value, value2);
+            picBox.BackColor = Color.FromName("k");
+
             this.AxisSpeed = 2;
         }
         /// <summary>
@@ -35,17 +38,6 @@ namespace Racegame
         {
             g.FillRectangle(Brushes.Blue, this.Position.X - this.CarSize / 2, this.Position.Y - this.CarSize / 2, this.CarSize, this.CarSize);
         }
-        /// <summary>
-        /// Overload van het eerdere methode
-        /// </summary>
-        /// <param name="g">De type</param>
-        /// <param name="b">De kleur in string</param>
-        public void Draw(Graphics g, String b)
-        {
-            if (b == "red")
-                g.FillRectangle(Brushes.Red, this.Position.X - this.CarSize / 2, this.Position.Y - this.CarSize / 2, this.CarSize, this.CarSize);
-            if (b == "yellow")
-                g.FillRectangle(Brushes.Yellow, this.Position.X - this.CarSize / 2, this.Position.Y - this.CarSize / 2, this.CarSize, this.CarSize);
-        }
-    }
+   }
 }
+
