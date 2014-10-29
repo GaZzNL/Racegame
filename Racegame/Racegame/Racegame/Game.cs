@@ -118,13 +118,13 @@ namespace Racegame
                     vehicle1.Speed.Y += vehicle1.AxisSpeed;
             // Vehicle 2 Controls + Snelheid als fuel onder 10 is
             if (progressBarVehicleTwo.Value <= 10)
-                if (e.KeyCode == Keys.Left && vehicle2.Speed.X >= -minSpeed)
+                if (e.KeyCode == Keys.A && vehicle2.Speed.X >= -minSpeed)
                     vehicle2.Speed.X -= vehicle2.AxisSpeed;
-                else if (e.KeyCode == Keys.Right && vehicle2.Speed.X <= minSpeed)
+                else if (e.KeyCode == Keys.D && vehicle2.Speed.X <= minSpeed)
                     vehicle2.Speed.X += vehicle2.AxisSpeed;
-                else if (e.KeyCode == Keys.Up && vehicle2.Speed.Y >= -minSpeed)
+                else if (e.KeyCode == Keys.W && vehicle2.Speed.Y >= -minSpeed)
                     vehicle2.Speed.Y -= vehicle2.AxisSpeed;
-                else if (e.KeyCode == Keys.Down && vehicle2.Speed.Y <= minSpeed)
+                else if (e.KeyCode == Keys.S && vehicle2.Speed.Y <= minSpeed)
                     vehicle2.Speed.Y += vehicle2.AxisSpeed;
         }
         void Form1_Paint(object sender, PaintEventArgs e)
