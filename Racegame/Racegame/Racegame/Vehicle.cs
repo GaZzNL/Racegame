@@ -77,7 +77,7 @@ namespace Racegame
                 //wat is de kleur van de huidige positie
                 //Checkt de kleur waar vehicle1 op positie staat(We moeten echt de GUI afschafen van Visual studio :p)
                 //Controleer de juist locatie
-                var image = new Bitmap(@"C:\Users\robert\Documents\GitHub\Racegame\Racegame\Racegame\Racegame\Resources\Naamloos.jpg");
+                var image = new Bitmap(@"C:\Users\robert\Documents\GitHub\Racegame\Racegame\Racegame\Racegame\Resources\map.jpg");
                 //Een if statement voor een onnodige exception
                 if (Position.X < -10 | Position.Y < -10 | Position.X < 1000 | Position.Y < 710)
                 {
