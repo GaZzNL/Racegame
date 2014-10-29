@@ -19,8 +19,10 @@ namespace Racegame
         public Color kleur { get; set; }
         public int Health { get; set; }
         public int Fuel { get; set; }
+        public int Laps { get; set; }
         public Boolean gras { get; set; }
-        
+        public Boolean CheckpointOne { get; set; }
+        public Boolean CheckpointTwo { get; set; }
         public Bitmap image;
         /// <summary>
         /// De constructor
@@ -35,6 +37,7 @@ namespace Racegame
             this.AxisSpeed = 1;
             this.Health = 300;
             this.Fuel = 100;
+            this.Laps = 1;
             //Checkt de kleur waar vehicle op positie staat
             image = new Bitmap(Racegame.Properties.Resources.map);
         }
@@ -116,6 +119,32 @@ namespace Racegame
                         Console.WriteLine("Dood");
                         respawn();
                     }
+                    //Finish
+                    else if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(0) && kleur.B.Equals(0))
+                    {
+                        Console.WriteLine("Finish");
+                        if(CheckpointOne == true && CheckpointTwo == true)
+                        {
+                            lap_count();
+                            CheckpointOne = false;
+                            CheckpointTwo = false;
+                        }
+                    }
+                    //Checkpoint een
+                    else if (kleur.A.Equals(255) && kleur.R.Equals(151) && kleur.G.Equals(135) && kleur.B.Equals(102))
+                    {
+                        Console.WriteLine("CheckPoint1");
+                        CheckpointOne = true;
+                    }
+                    //Checkpoint twee
+                    else if (kleur.A.Equals(255) && kleur.R.Equals(208) && 	kleur.G.Equals(142) && kleur.B.Equals(94))
+                    {
+                        if(CheckpointOne == true)
+                        {
+                            Console.WriteLine("checkpoint2");
+                            CheckpointTwo = true;
+                        }
+                    }   
                     else
                     {
                         gras = false;
@@ -139,6 +168,10 @@ namespace Racegame
             Speed.X = 0;
             Speed.Y = 0;
             Position = Spawn;
+        }
+        public void lap_count()
+        {
+            this.Laps++;
         }
     }
 }
