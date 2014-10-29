@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.MousePosition = new System.Windows.Forms.Label();
+            this.progressBarVehicleOne = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // MousePosition
@@ -40,6 +41,13 @@
             this.MousePosition.Size = new System.Drawing.Size(292, 30);
             this.MousePosition.TabIndex = 24;
             // 
+            // progressBarVehicleOne
+            // 
+            this.progressBarVehicleOne.Location = new System.Drawing.Point(313, 203);
+            this.progressBarVehicleOne.Name = "progressBarVehicleOne";
+            this.progressBarVehicleOne.Size = new System.Drawing.Size(100, 23);
+            this.progressBarVehicleOne.TabIndex = 25;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -47,6 +55,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.progressBarVehicleOne);
             this.Controls.Add(this.MousePosition);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximumSize = new System.Drawing.Size(1024, 768);
@@ -60,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.Label MousePosition;
+        private System.Windows.Forms.ProgressBar progressBarVehicleOne;
     }
 }

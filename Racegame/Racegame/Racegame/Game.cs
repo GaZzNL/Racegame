@@ -17,6 +17,8 @@ namespace Racegame
         public Vehicle vehicle1;
         public Vehicle vehicle2;
 
+        int maxspeedX = 3;
+        int maxspeedY = 3;
 
         /// <summary>
         /// De constructor van de game class
@@ -38,27 +40,48 @@ namespace Racegame
 
             vehicle1 = new Vehicle(768,70);
             vehicle2 = new Vehicle(768,118);
+            progressBarVehicleOne.Value = 100;
+        }
+
+        void decay_tick(object sender, EventArgs e)
+        {
+            progressBarVehicleOne.Value = progressBarVehicleOne.Value - 1;
+            if (progressBarVehicleOne.Value <= 2)
+            {
+
+                progressBarVehicleOne.Value = progressBarVehicleOne.Value + 10;
+
+            }
+
         }
 
         //Keybinding voor de twee objecten + Snelheid
         void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Left && vehicle1.Speed.X >= -3)
+            if (e.KeyCode == Keys.Left && vehicle1.Speed.X >= -maxspeedX)
                 vehicle1.Speed.X -= vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.Right && vehicle1.Speed.X <= 3)
+            else if (e.KeyCode == Keys.Right && vehicle1.Speed.X <= maxspeedX)
                 vehicle1.Speed.X += vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.Up && vehicle1.Speed.Y >= -3)
+            else if (e.KeyCode == Keys.Up && vehicle1.Speed.Y >= -maxspeedY)
                 vehicle1.Speed.Y -= vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.Down && vehicle1.Speed.Y <= 3)
+            else if (e.KeyCode == Keys.Down && vehicle1.Speed.Y <= maxspeedY)
                 vehicle1.Speed.Y += vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.A && vehicle2.Speed.X >= -2)
+            else if (e.KeyCode == Keys.A && vehicle2.Speed.X >= -maxspeedX)
                 vehicle2.Speed.X -= vehicle2.AxisSpeed;
-            else if (e.KeyCode == Keys.D && vehicle2.Speed.X <= 2)
+            else if (e.KeyCode == Keys.D && vehicle2.Speed.X <= maxspeedX)
                 vehicle2.Speed.X += vehicle2.AxisSpeed;
-            else if (e.KeyCode == Keys.W && vehicle2.Speed.Y >= -4)
+            else if (e.KeyCode == Keys.W && vehicle2.Speed.Y >= -maxspeedY)
                 vehicle2.Speed.Y -= vehicle2.AxisSpeed;
-            else if (e.KeyCode == Keys.S && vehicle2.Speed.Y <= 1)
+            else if (e.KeyCode == Keys.S && vehicle2.Speed.Y <= maxspeedY)
                 vehicle2.Speed.Y += vehicle2.AxisSpeed;
+            // brandstof balk
+            if (progressBarVehicleOne.Value <= 2)
+            {
+
+                maxspeedX = 1;
+                maxspeedY = 1;
+
+            }
         }
 
         void Form1_Paint(object sender, PaintEventArgs e)
