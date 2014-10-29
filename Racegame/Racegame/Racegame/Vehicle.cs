@@ -35,7 +35,7 @@ namespace Racegame
             this.Health = 3;
             this.Fuel = 100;
             //Checkt de kleur waar vehicle op positie staat(We moeten echt de GUI afschafen van Visual studio :p)
-            image = new Bitmap(@"C:\Users\Rikus\Documents\GitHub\Racegame\Racegame\Racegame\Racegame\Resources/map.jpg");
+            image = new Bitmap(Racegame.Properties.Resources.map);
         }
         /// <summary>
         /// Tekent het object op de juiste locatie
