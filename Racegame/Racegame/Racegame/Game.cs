@@ -17,8 +17,8 @@ namespace Racegame
         public Vehicle vehicle1;
         public Vehicle vehicle2;
 
-        int maxspeedX = 3;
-        int maxspeedY = 3;
+        int maxSpeed = 3;
+        int minSpeed = 1;
 
         /// <summary>
         /// De constructor van de game class
@@ -83,28 +83,46 @@ namespace Racegame
         //Keybinding voor de twee objecten + Snelheid
         void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Left && vehicle1.Speed.X >= -maxspeedX)
-                vehicle1.Speed.X -= vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.Right && vehicle1.Speed.X <= maxspeedX)
-                vehicle1.Speed.X += vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.Up && vehicle1.Speed.Y >= -maxspeedY)
-                vehicle1.Speed.Y -= vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.Down && vehicle1.Speed.Y <= maxspeedY)
-                vehicle1.Speed.Y += vehicle1.AxisSpeed;
-            else if (e.KeyCode == Keys.A && vehicle2.Speed.X >= -maxspeedX)
-                vehicle2.Speed.X -= vehicle2.AxisSpeed;
-            else if (e.KeyCode == Keys.D && vehicle2.Speed.X <= maxspeedX)
-                vehicle2.Speed.X += vehicle2.AxisSpeed;
-            else if (e.KeyCode == Keys.W && vehicle2.Speed.Y >= -maxspeedY)
-                vehicle2.Speed.Y -= vehicle2.AxisSpeed;
-            else if (e.KeyCode == Keys.S && vehicle2.Speed.Y <= maxspeedY)
-                vehicle2.Speed.Y += vehicle2.AxisSpeed;
-            // brandstof balk
-            if (progressBarVehicleOne.Value <= 2)
-            {
-                maxspeedX = 1;
-                maxspeedY = 1;
-            }
+            // Vehicle 1 Controls + Snelheid als fuel boven 10 is
+            if (progressBarVehicleOne.Value >= 10)
+                if (e.KeyCode == Keys.Left && vehicle1.Speed.X >= -maxSpeed)
+                    vehicle1.Speed.X -= vehicle1.AxisSpeed;
+                else if (e.KeyCode == Keys.Right && vehicle1.Speed.X <= maxSpeed)
+                    vehicle1.Speed.X += vehicle1.AxisSpeed;
+                else if (e.KeyCode == Keys.Up && vehicle1.Speed.Y >= -maxSpeed)
+                    vehicle1.Speed.Y -= vehicle1.AxisSpeed;
+                else if (e.KeyCode == Keys.Down && vehicle1.Speed.Y <= maxSpeed)
+                    vehicle1.Speed.Y += vehicle1.AxisSpeed;
+            // Vehicle 2 Controls + Snelheid als fuel boven 10 is
+            if (progressBarVehicleTwo.Value >= 10)
+                if (e.KeyCode == Keys.A && vehicle2.Speed.X >= -maxSpeed)
+                    vehicle2.Speed.X -= vehicle2.AxisSpeed;
+                else if (e.KeyCode == Keys.D && vehicle2.Speed.X <= maxSpeed)
+                    vehicle2.Speed.X += vehicle2.AxisSpeed;
+                else if (e.KeyCode == Keys.W && vehicle2.Speed.Y >= -maxSpeed)
+                    vehicle2.Speed.Y -= vehicle2.AxisSpeed;
+                else if (e.KeyCode == Keys.S && vehicle2.Speed.Y <= maxSpeed)
+                    vehicle2.Speed.Y += vehicle2.AxisSpeed;
+            // Vehicle 1 Controls + Snelheid als fuel onder 10 is
+            if (progressBarVehicleOne.Value <= 10)
+                if (e.KeyCode == Keys.Left && vehicle1.Speed.X >= -minSpeed)
+                    vehicle1.Speed.X -= vehicle1.AxisSpeed;
+                else if (e.KeyCode == Keys.Right && vehicle1.Speed.X <= minSpeed)
+                    vehicle1.Speed.X += vehicle1.AxisSpeed;
+                else if (e.KeyCode == Keys.Up && vehicle1.Speed.Y >= -minSpeed)
+                    vehicle1.Speed.Y -= vehicle1.AxisSpeed;
+                else if (e.KeyCode == Keys.Down && vehicle1.Speed.Y <= minSpeed)
+                    vehicle1.Speed.Y += vehicle1.AxisSpeed;
+            // Vehicle 2 Controls + Snelheid als fuel onder 10 is
+            if (progressBarVehicleTwo.Value <= 10)
+                if (e.KeyCode == Keys.Left && vehicle1.Speed.X >= -minSpeed)
+                    vehicle2.Speed.X -= vehicle1.AxisSpeed;
+                else if (e.KeyCode == Keys.Right && vehicle1.Speed.X <= minSpeed)
+                    vehicle2.Speed.X += vehicle1.AxisSpeed;
+                else if (e.KeyCode == Keys.Up && vehicle1.Speed.Y >= -minSpeed)
+                    vehicle2.Speed.Y -= vehicle1.AxisSpeed;
+                else if (e.KeyCode == Keys.Down && vehicle1.Speed.Y <= minSpeed)
+                    vehicle2.Speed.Y += vehicle1.AxisSpeed;
         }
         void Form1_Paint(object sender, PaintEventArgs e)
         {
