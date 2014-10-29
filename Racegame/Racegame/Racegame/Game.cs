@@ -45,8 +45,8 @@ namespace Racegame
 
             vehicle1 = new Vehicle(768,70);
             vehicle2 = new Vehicle(768,118);
-            progressBarVehicleOne.Value = vehicle1.fuel;
-            progressBarVehicleTwo.Value = vehicle2.fuel;
+            progressBarVehicleOne.Value = vehicle1.Fuel;
+            progressBarVehicleTwo.Value = vehicle2.Fuel;
 
         }
 
@@ -55,21 +55,21 @@ namespace Racegame
             try
             {
                 if (vehicle1.Speed.X > 0)
-                    progressBarVehicleOne.Value = progressBarVehicleOne.Value - vehicle1.Speed.X;
+                    vehicle1.Fuel = vehicle1.Fuel - vehicle1.Speed.X;
                 if (vehicle1.Speed.X < 0)
-                    progressBarVehicleOne.Value = progressBarVehicleOne.Value + vehicle1.Speed.X;
+                    vehicle1.Fuel = vehicle1.Fuel + vehicle1.Speed.X;
                 if (vehicle1.Speed.Y > 0)
-                    progressBarVehicleOne.Value = progressBarVehicleOne.Value - vehicle1.Speed.Y;
+                    vehicle1.Fuel = vehicle1.Fuel - vehicle1.Speed.Y;
                 if (vehicle1.Speed.Y < 0)
-                    progressBarVehicleOne.Value = progressBarVehicleOne.Value + vehicle1.Speed.Y;
+                    vehicle1.Fuel = vehicle1.Fuel + vehicle1.Speed.Y;
                 if (vehicle2.Speed.X > 0)
-                    progressBarVehicleTwo.Value = progressBarVehicleTwo.Value - vehicle2.Speed.X;
+                    vehicle1.Fuel = vehicle1.Fuel - vehicle2.Speed.X;
                 if (vehicle1.Speed.X < 0)
-                    progressBarVehicleTwo.Value = progressBarVehicleTwo.Value + vehicle2.Speed.X;
+                    vehicle1.Fuel = vehicle1.Fuel + vehicle2.Speed.X;
                 if (vehicle1.Speed.Y > 0)
-                    progressBarVehicleTwo.Value = progressBarVehicleTwo.Value - vehicle2.Speed.Y;
+                    vehicle1.Fuel = vehicle1.Fuel - vehicle2.Speed.Y;
                 if (vehicle2.Speed.Y < 0)
-                    progressBarVehicleTwo.Value = progressBarVehicleTwo.Value + vehicle2.Speed.Y;
+                    vehicle1.Fuel = vehicle1.Fuel + vehicle2.Speed.Y;
 
             }
             catch (Exception a)
@@ -80,7 +80,7 @@ namespace Racegame
 
         public static int tanken()
         {
-            return (0);
+            return (1);
         }
 
         //Keybinding voor de twee objecten + Snelheid

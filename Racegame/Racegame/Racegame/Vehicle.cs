@@ -18,7 +18,7 @@ namespace Racegame
         public int AxisSpeed { get; set; }
         public Color kleur { get; set; }
         public int Health { get; set; }
-        public int fuel { get; set; }
+        public int Fuel { get; set; }
         
         public Bitmap image;
         /// <summary>
@@ -33,7 +33,7 @@ namespace Racegame
             this.CarSize = 30;
             this.AxisSpeed = 2;
             this.Health = 3;
-            this.fuel = 100;
+            this.Fuel = 100;
             //Checkt de kleur waar vehicle op positie staat(We moeten echt de GUI afschafen van Visual studio :p)
             image = new Bitmap(@"C:\Users\Rikus\Documents\GitHub\Racegame\Racegame\Racegame\Racegame\Resources/map.jpg");
         }
@@ -100,7 +100,7 @@ namespace Racegame
                     if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(0) && kleur.B.Equals(206))
                     {
                         Console.WriteLine("Pitstop");
-                        this.fuel += Game.tanken();
+                        this.Fuel += Game.tanken();
                     }
                     if (kleur.A.Equals(255) && kleur.R.Equals(234) && kleur.G.Equals(31) && kleur.B.Equals(37))
                     {
