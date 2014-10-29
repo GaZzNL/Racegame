@@ -121,8 +121,13 @@ namespace Racegame
                 //Tegen het kapot gaan van onze game
                 vehicle1.getColor();
                 vehicle1.getColor();
+                Collision();
                 Invalidate();
             }
+        }
+        public void Collision()
+        {
+            if (vehicle1.Position == vehicle2.Position) vehicle1.Health--; vehicle1.Health--;
         }
     }
 }

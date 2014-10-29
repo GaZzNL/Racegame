@@ -93,6 +93,12 @@ namespace Racegame
                     //Pitstop
                     if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(0) && kleur.B.Equals(206))
                         Console.WriteLine("Pitstop");
+                    if (kleur.A.Equals(255) && kleur.R.Equals(218) && kleur.G.Equals(35) && kleur.B.Equals(40))
+                    {
+                        Console.WriteLine("Dood");
+                        Position.X = 768;
+                        Position.Y = 70;
+                    }
                 }
             }
             catch (Exception e)
