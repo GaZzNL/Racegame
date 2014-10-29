@@ -80,7 +80,7 @@ namespace Racegame
             try
             {          
                 //Een if statement voor een onnodige exception
-                if (Position.X < -10 | Position.Y < -10 | Position.X < 1200 | Position.Y < 900)
+                if (Position.X < -10 | Position.Y < -10 | Position.X < 1200 | Position.Y < 700)
                 {
                     //wat is de kleur van de huidige positie
                     Color kleur = image.GetPixel(Position.X, Position.Y);
@@ -154,6 +154,7 @@ namespace Racegame
             catch (Exception e)
             {
                 Console.WriteLine("Error met de bitmap: " + e);
+                respawn();
             }
         }
         public void checkHealth()
@@ -167,6 +168,8 @@ namespace Racegame
             Fuel = 100;
             Speed.X = 0;
             Speed.Y = 0;
+            CheckpointOne = false;
+            CheckpointTwo = false;
             Position = Spawn;
         }
         public void lap_count()

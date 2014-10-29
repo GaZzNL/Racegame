@@ -155,7 +155,7 @@ namespace Racegame
                 vehicle1.checklocation();
                 vehicle2.checklocation();
                 //De auto(als in voertuig) debugger! deze controleerd nu op de locatie
-                MousePosition.Text = (Convert.ToString(vehicle1.CheckpointOne+" "+vehicle1.CheckpointTwo));
+                MousePosition.Text = (Convert.ToString(vehicle1.Position));
                 //Tegen het kapot gaan van onze game
                 vehicle1.getColor();
                 vehicle2.getColor();
