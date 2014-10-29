@@ -60,7 +60,7 @@ namespace Racegame
         }
         public void checklocation()
         {
-            //Hier word gechecktpf het voertuig zich mag verplaatsen op de locatie
+            //Hier word gecheckt of het voertuig zich mag verplaatsen op de locatie
             if (Position.X > 0 & Position.Y > 0 & Position.X < 1200 & Position.Y < 900)
             {
 
