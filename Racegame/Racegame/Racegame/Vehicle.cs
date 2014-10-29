@@ -16,6 +16,7 @@ namespace Racegame
         public int CarSize { get; set; }
         public int AxisSpeed { get; set; }
         public Color kleur { get; set; }
+        public int Health { get; set; }
         /// <summary>
         /// De constructor
         /// </summary>
@@ -26,6 +27,7 @@ namespace Racegame
             this.Speed = new Point(0, 0);
             this.CarSize = 30;
             this.AxisSpeed = 2;
+            this.Health = 3;
         }
         /// <summary>
         /// Tekent het object op de juiste locatie

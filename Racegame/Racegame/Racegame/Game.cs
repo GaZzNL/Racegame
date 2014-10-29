@@ -57,11 +57,8 @@ namespace Racegame
             
             if (progressBarVehicleOne.Value <= 2)
             {
-
                 progressBarVehicleOne.Value = progressBarVehicleOne.Value + 10;
-
             }
-
         }
 
         //Keybinding voor de twee objecten + Snelheid
@@ -86,10 +83,8 @@ namespace Racegame
             // brandstof balk
             if (progressBarVehicleOne.Value <= 2)
             {
-
                 maxspeedX = 1;
                 maxspeedY = 1;
-
             }
         }
         void Form1_Paint(object sender, PaintEventArgs e)
