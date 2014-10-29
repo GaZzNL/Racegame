@@ -13,10 +13,12 @@ namespace Racegame
         //Getters en Setters
         public Point Position;
         public Point Speed;
+        public Point Spawn;
         public int CarSize { get; set; }
         public int AxisSpeed { get; set; }
         public Color kleur { get; set; }
         public int Health { get; set; }
+       
         public Bitmap image;
         /// <summary>
         /// De constructor
@@ -25,6 +27,7 @@ namespace Racegame
         public Vehicle(int x, int y)
         {
             this.Position = new Point(x, y);
+            this.Spawn = new Point(x, y);
             this.Speed = new Point(0, 0);
             this.CarSize = 30;
             this.AxisSpeed = 2;
@@ -57,8 +60,7 @@ namespace Racegame
             //hier check je of de autos niet van het scherm rijden/ Als de voertuig "Te verweg is van de baan" word hij op de start positie gezet
             if (Position.X < -10 | Position.Y < -10 | Position.X > 1000 | Position.Y > 710)
             {
-                Position.X = 768;
-                Position.Y = 70;
+                respawn();
             }
             //Hier word gecheckt als de voertuig zich mag verplaatsen op de locatie
             if (Position.X > 0 & Position.Y > 0 & Position.X < 990 & Position.Y < 700)
@@ -94,11 +96,10 @@ namespace Racegame
                     //Pitstop
                     if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(0) && kleur.B.Equals(206))
                         Console.WriteLine("Pitstop");
-                    if (kleur.A.Equals(255) && kleur.R.Equals(218) && kleur.G.Equals(35) && kleur.B.Equals(40))
+                    if (kleur.A.Equals(255) && kleur.R.Equals(234) && kleur.G.Equals(31) && kleur.B.Equals(37))
                     {
                         Console.WriteLine("Dood");
-                        Position.X = 768;
-                        Position.Y = 70;
+                        respawn();
                     }
                 }
             }
@@ -106,6 +107,10 @@ namespace Racegame
             {
                 Console.WriteLine("Error met de bitmap: " + e);
             }
+        }
+        public void respawn()
+        {
+            Position = Spawn;
         }
     }
 }
