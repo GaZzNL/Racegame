@@ -20,9 +20,9 @@ namespace Racegame
         /// De constructor
         /// </summary>
         /// <param name="value">De locatie van de vehicle</param>
-        public Vehicle(int value)
+        public Vehicle(int x, int y)
         {
-            this.Position = new Point(value, value);
+            this.Position = new Point(x, y);
             this.Speed = new Point(0, 0);
             this.CarSize = 30;
             this.AxisSpeed = 2;
