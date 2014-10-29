@@ -175,10 +175,6 @@ namespace Racegame
         }
         public void lap_count()
         {
-            if(this.Laps >2)
-            {
-                
-            }
             this.Laps++;
         }
     }
