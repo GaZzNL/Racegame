@@ -46,7 +46,7 @@ namespace Racegame
             if (e.KeyCode == Keys.Left && vehicle1.Speed.X >= -3)
                 vehicle1.Speed.X -= vehicle1.AxisSpeed;
             else if (e.KeyCode == Keys.Right && vehicle1.Speed.X <= 3)
-                vehicle1.Speed.X += vehicle1.AxisSpeed;
+                vehicle1.Speed.X += vehicle1.Speed.X;
             else if (e.KeyCode == Keys.Up && vehicle1.Speed.Y >= -3)
                 vehicle1.Speed.Y -= vehicle1.AxisSpeed;
             else if (e.KeyCode == Keys.Down && vehicle1.Speed.Y <= 3)
