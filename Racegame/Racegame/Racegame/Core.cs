@@ -16,7 +16,7 @@ namespace Racegame
         public Core()
         {
             GameTimer = new Timer();
-            //Zet de steld de snelheid in, in nanosecondes
+            //Stelt de snelheid in, in nanosecondes
             GameTimer.Interval = 10;
             GameTimer.Tick += new EventHandler(GameTimer_Tick);//Moet je locatie functie zoeken
             GameTimer.Start();
