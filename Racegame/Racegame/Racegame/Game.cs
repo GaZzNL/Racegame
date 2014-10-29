@@ -18,7 +18,7 @@ namespace Racegame
         public Vehicle vehicle2;
 
         int maxSpeed = 3;
-        int minSpeed = 1;
+        int minSpeed = 0;
 
         /// <summary>
         /// De constructor van de game class
@@ -95,7 +95,7 @@ namespace Racegame
                 else if (e.KeyCode == Keys.Down && vehicle1.Speed.Y <= maxSpeed)
                     vehicle1.Speed.Y += vehicle1.AxisSpeed;
             // Vehicle 2 Controls + Snelheid als fuel boven 10 is
-            if (progressBarVehicleTwo.Value >= 10 && vehicle2.gras != true)
+            if (progressBarVehicleTwo.Value >= 10 && vehicle1.gras != true)
                 if (e.KeyCode == Keys.A && vehicle2.Speed.X >= -maxSpeed)
                     vehicle2.Speed.X -= vehicle2.AxisSpeed;
                 else if (e.KeyCode == Keys.D && vehicle2.Speed.X <= maxSpeed)
@@ -105,7 +105,7 @@ namespace Racegame
                 else if (e.KeyCode == Keys.S && vehicle2.Speed.Y <= maxSpeed)
                     vehicle2.Speed.Y += vehicle2.AxisSpeed;
             // Vehicle 1 Controls + Snelheid als fuel onder 10 is
-            if (progressBarVehicleOne.Value <= 10)
+            if (progressBarVehicleOne.Value <= 10 )
                 if (e.KeyCode == Keys.Left && vehicle1.Speed.X >= -minSpeed)
                     vehicle1.Speed.X -= vehicle1.AxisSpeed;
                 else if (e.KeyCode == Keys.Right && vehicle1.Speed.X <= minSpeed)
@@ -115,7 +115,7 @@ namespace Racegame
                 else if (e.KeyCode == Keys.Down && vehicle1.Speed.Y <= minSpeed)
                     vehicle1.Speed.Y += vehicle1.AxisSpeed;
             // Vehicle 2 Controls + Snelheid als fuel onder 10 is
-            if (progressBarVehicleTwo.Value <= 10)
+            if (progressBarVehicleTwo.Value <= 10 )
                 if (e.KeyCode == Keys.A && vehicle2.Speed.X >= -minSpeed)
                     vehicle2.Speed.X -= vehicle2.AxisSpeed;
                 else if (e.KeyCode == Keys.D && vehicle2.Speed.X <= minSpeed)
