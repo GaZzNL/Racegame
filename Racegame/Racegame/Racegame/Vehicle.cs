@@ -60,11 +60,15 @@ namespace Racegame
         public void checklocation()
         {
             //Hier word gecheckt als de voertuig zich mag verplaatsen op de locatie
-            if (Position.X > 0 & Position.Y > 0 & Position.X < 990 & Position.Y < 700)
+            if (Position.X > 0 & Position.Y > 0 & Position.X < 1200 & Position.Y < 900)
             {
 
                 Position.X += Speed.X;
                 Position.Y += Speed.Y;
+            }
+            else
+            {
+                respawn();
             }
         }
         public void getColor()
@@ -72,7 +76,7 @@ namespace Racegame
             try
             {          
                 //Een if statement voor een onnodige exception
-                if (Position.X < -10 | Position.Y < -10 | Position.X < 1000 | Position.Y < 710)
+                if (Position.X < -10 | Position.Y < -10 | Position.X < 1200 | Position.Y < 900)
                 {
                     //wat is de kleur van de huidige positie
                     Color kleur = image.GetPixel(Position.X, Position.Y);
@@ -91,6 +95,7 @@ namespace Racegame
                         Console.WriteLine("Pitstop");
                         if (Fuel < 100) this.Fuel += Game.tanken();
                     }
+                    //Rood
                     if (kleur.A.Equals(255) && kleur.R.Equals(234) && kleur.G.Equals(31) && kleur.B.Equals(37))
                     {
                         Console.WriteLine("Dood");
