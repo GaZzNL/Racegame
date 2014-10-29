@@ -47,8 +47,6 @@ namespace Racegame
             vehicle2 = new Vehicle(768,118);
             progressBarVehicleOne.Value = vehicle1.Fuel;
             progressBarVehicleTwo.Value = vehicle2.Fuel;
-
-
         }
 
         void decay_tick(object sender, EventArgs e)
@@ -87,7 +85,7 @@ namespace Racegame
         void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             // Vehicle 1 Controls + Snelheid als fuel boven 10 is
-            if (progressBarVehicleOne.Value >= 10)
+            if (progressBarVehicleOne.Value >= 10 && vehicle1.gras != true)
                 if (e.KeyCode == Keys.Left && vehicle1.Speed.X >= -maxSpeed)
                     vehicle1.Speed.X -= vehicle1.AxisSpeed;
                 else if (e.KeyCode == Keys.Right && vehicle1.Speed.X <= maxSpeed)
@@ -97,7 +95,7 @@ namespace Racegame
                 else if (e.KeyCode == Keys.Down && vehicle1.Speed.Y <= maxSpeed)
                     vehicle1.Speed.Y += vehicle1.AxisSpeed;
             // Vehicle 2 Controls + Snelheid als fuel boven 10 is
-            if (progressBarVehicleTwo.Value >= 10)
+            if (progressBarVehicleTwo.Value >= 10 && vehicle2.gras != true)
                 if (e.KeyCode == Keys.A && vehicle2.Speed.X >= -maxSpeed)
                     vehicle2.Speed.X -= vehicle2.AxisSpeed;
                 else if (e.KeyCode == Keys.D && vehicle2.Speed.X <= maxSpeed)

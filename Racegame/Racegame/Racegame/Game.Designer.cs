@@ -44,7 +44,7 @@
             // 
             // progressBarVehicleOne
             // 
-            this.progressBarVehicleOne.Location = new System.Drawing.Point(313, 203);
+            this.progressBarVehicleOne.Location = new System.Drawing.Point(273, 202);
             this.progressBarVehicleOne.Name = "progressBarVehicleOne";
             this.progressBarVehicleOne.Size = new System.Drawing.Size(100, 23);
             this.progressBarVehicleOne.TabIndex = 25;

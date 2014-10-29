@@ -19,6 +19,7 @@ namespace Racegame
         public Color kleur { get; set; }
         public int Health { get; set; }
         public int Fuel { get; set; }
+        public Boolean gras { get; set; }
         
         public Bitmap image;
         /// <summary>
@@ -85,21 +86,33 @@ namespace Racegame
                     //Controleer de juist locatie
                     //Gras
                     if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(128) && kleur.B.Equals(1))
+                    {
                         Console.WriteLine("Gras");
+                        gras = true;
+                    }
+                        
                     //De weg
-                    if (kleur.A.Equals(255) && kleur.R.Equals(106) && kleur.G.Equals(104) && kleur.B.Equals(105))
+                    else if (kleur.A.Equals(255) && kleur.R.Equals(106) && kleur.G.Equals(104) && kleur.B.Equals(105))
+                    {
                         Console.WriteLine("weg");
+                        gras = false;
+                    }
                     //Pitstop
-                    if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(0) && kleur.B.Equals(206))
+                    else if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(0) && kleur.B.Equals(206))
                     {
                         Console.WriteLine("Pitstop");
+                        gras = false;
                         if (Fuel < 100) this.Fuel += Game.tanken();
                     }
                     //Rood
-                    if (kleur.A.Equals(255) && kleur.R.Equals(234) && kleur.G.Equals(31) && kleur.B.Equals(37))
+                    else if (kleur.A.Equals(255) && kleur.R.Equals(234) && kleur.G.Equals(31) && kleur.B.Equals(37))
                     {
                         Console.WriteLine("Dood");
                         respawn();
+                    }
+                    else
+                    {
+                        gras = false;
                     }
                 }
             }
