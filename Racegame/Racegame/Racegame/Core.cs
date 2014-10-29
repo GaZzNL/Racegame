@@ -26,5 +26,10 @@ namespace Racegame
         {
             game.Draw();
         }
+
+        public void stopThisClock()
+        {
+            GameTimer.Stop();
+        }
     }
 }

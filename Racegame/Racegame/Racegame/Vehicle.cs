@@ -109,9 +109,10 @@ namespace Racegame
 
                         this.Health += Game.tanken();
 
-                        if (Fuel < 100) this.Fuel += Game.tanken();
-                        //if (Health < 300) this.Health += Game.tanken();
-                        Console.WriteLine("Health" + Health);
+                        if (Fuel < 100)
+                            this.Fuel += Game.tanken();
+                        if (Health < 300)
+                            this.Health += Game.tanken();
                     }
                     //Rood
                     else if (kleur.A.Equals(255) && kleur.R.Equals(234) && kleur.G.Equals(31) && kleur.B.Equals(37))
@@ -174,6 +175,10 @@ namespace Racegame
         }
         public void lap_count()
         {
+            if(this.Laps >2)
+            {
+                
+            }
             this.Laps++;
         }
     }
