@@ -72,7 +72,7 @@ namespace Racegame
             }
             catch (Exception a)
             {
-                Console.WriteLine("note enough fuel" + a);
+                Console.WriteLine("not enough fuel" + a);
             }
         }
 
@@ -141,7 +141,7 @@ namespace Racegame
             Backbuffer = new Bitmap(ClientSize.Width, ClientSize.Height);
         }
 
-        //Tekent de objecten op je juiste locaties
+        //Tekent de objecten op de juiste locaties
         public void Draw()
         {
             if (Backbuffer != null)
