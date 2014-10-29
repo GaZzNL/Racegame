@@ -31,7 +31,7 @@ namespace Racegame
             this.Spawn = new Point(x, y);
             this.Speed = new Point(0, 0);
             this.CarSize = 30;
-            this.AxisSpeed = 2;
+            this.AxisSpeed = 1;
             this.Health = 300;
             this.Fuel = 100;
             //Checkt de kleur waar vehicle op positie staat
@@ -85,7 +85,9 @@ namespace Racegame
                     //Controleer de juist locatie
                     //Gras
                     if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(128) && kleur.B.Equals(1))
+                    {
                         Console.WriteLine("Gras");
+                    }
                     //De weg
                     if (kleur.A.Equals(255) && kleur.R.Equals(106) && kleur.G.Equals(104) && kleur.B.Equals(105))
                         Console.WriteLine("weg");
@@ -93,7 +95,10 @@ namespace Racegame
                     if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(0) && kleur.B.Equals(206))
                     {
                         Console.WriteLine("Pitstop");
+                        this.Health += Game.tanken();
                         if (Fuel < 100) this.Fuel += Game.tanken();
+                        //if (Health < 300) this.Health += Game.tanken();
+                        Console.WriteLine("Health" + Health);
                     }
                     //Rood
                     if (kleur.A.Equals(255) && kleur.R.Equals(234) && kleur.G.Equals(31) && kleur.B.Equals(37))
