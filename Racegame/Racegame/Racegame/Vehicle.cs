@@ -17,6 +17,7 @@ namespace Racegame
         public int AxisSpeed { get; set; }
         public Color kleur { get; set; }
         public int Health { get; set; }
+        public Bitmap image;
         /// <summary>
         /// De constructor
         /// </summary>
@@ -28,6 +29,8 @@ namespace Racegame
             this.CarSize = 30;
             this.AxisSpeed = 2;
             this.Health = 3;
+            //Checkt de kleur waar vehicle op positie staat(We moeten echt de GUI afschafen van Visual studio :p)
+            image = new Bitmap(@"E:\git\Racegame\Racegame\Racegame\Racegame\Resources\map.jpg");
         }
         /// <summary>
         /// Tekent het object op de juiste locatie
@@ -73,17 +76,15 @@ namespace Racegame
         public void getColor()
         {
             try
-            {
-                //wat is de kleur van de huidige positie
-                //Checkt de kleur waar vehicle1 op positie staat(We moeten echt de GUI afschafen van Visual studio :p)
-                //Controleer de juist locatie
-                var image = new Bitmap(@"C:\Users\robert\Documents\GitHub\Racegame\Racegame\Racegame\Racegame\Resources\map.jpg");
+            {          
                 //Een if statement voor een onnodige exception
                 if (Position.X < -10 | Position.Y < -10 | Position.X < 1000 | Position.Y < 710)
                 {
+                    //wat is de kleur van de huidige positie
                     Color kleur = image.GetPixel(Position.X, Position.Y);
                     //Debug geeft de code waar hij op staat
                     Console.WriteLine(kleur);
+                    //Controleer de juist locatie
                     //Gras
                     if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(128) && kleur.B.Equals(1))
                         Console.WriteLine("Gras");
