@@ -18,7 +18,8 @@ namespace Racegame
         public int AxisSpeed { get; set; }
         public Color kleur { get; set; }
         public int Health { get; set; }
-       
+        public int fuel { get; set; }
+        
         public Bitmap image;
         /// <summary>
         /// De constructor
@@ -32,8 +33,9 @@ namespace Racegame
             this.CarSize = 30;
             this.AxisSpeed = 2;
             this.Health = 3;
+            this.fuel = 100;
             //Checkt de kleur waar vehicle op positie staat(We moeten echt de GUI afschafen van Visual studio :p)
-            image = new Bitmap(@"E:\git\Racegame\Racegame\Racegame\Racegame\Resources\map.jpg");
+            image = new Bitmap(@"C:\Users\Rikus\Documents\GitHub\Racegame\Racegame\Racegame\Racegame\Resources/map.jpg");
         }
         /// <summary>
         /// Tekent het object op de juiste locatie
@@ -61,6 +63,7 @@ namespace Racegame
             if (Position.X < -10 | Position.Y < -10 | Position.X > 1000 | Position.Y > 710)
             {
                 respawn();
+                
             }
             //Hier word gecheckt als de voertuig zich mag verplaatsen op de locatie
             if (Position.X > 0 & Position.Y > 0 & Position.X < 990 & Position.Y < 700)
@@ -95,7 +98,10 @@ namespace Racegame
                         Console.WriteLine("weg");
                     //Pitstop
                     if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(0) && kleur.B.Equals(206))
+                    {
                         Console.WriteLine("Pitstop");
+                        this.fuel += Game.tanken();
+                    }
                     if (kleur.A.Equals(255) && kleur.R.Equals(234) && kleur.G.Equals(31) && kleur.B.Equals(37))
                     {
                         Console.WriteLine("Dood");

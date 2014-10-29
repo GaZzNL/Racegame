@@ -45,8 +45,9 @@ namespace Racegame
 
             vehicle1 = new Vehicle(768,70);
             vehicle2 = new Vehicle(768,118);
-            progressBarVehicleOne.Value = 100;
-            progressBarVehicleTwo.Value = 100;
+            progressBarVehicleOne.Value = vehicle1.fuel;
+            progressBarVehicleTwo.Value = vehicle2.fuel;
+
         }
 
         void decay_tick(object sender, EventArgs e)
@@ -69,15 +70,17 @@ namespace Racegame
                     progressBarVehicleTwo.Value = progressBarVehicleTwo.Value - vehicle2.Speed.Y;
                 if (vehicle2.Speed.Y < 0)
                     progressBarVehicleTwo.Value = progressBarVehicleTwo.Value + vehicle2.Speed.Y;
-                if (progressBarVehicleOne.Value <= 10)
-                    progressBarVehicleOne.Value += 10;
-                if (progressBarVehicleTwo.Value <= 10)
-                    progressBarVehicleTwo.Value += 10;
+
             }
             catch (Exception a)
             {
                 Console.WriteLine("note enough fuel" + a);
             }
+        }
+
+        public static int tanken()
+        {
+            return (0);
         }
 
         //Keybinding voor de twee objecten + Snelheid
@@ -158,6 +161,7 @@ namespace Racegame
                 //Tegen het kapot gaan van onze game
                 vehicle1.getColor();
                 vehicle1.getColor();
+
                 Collision();
                 Invalidate();
             }
