@@ -50,7 +50,11 @@ namespace Racegame
 
         void decay_tick(object sender, EventArgs e)
         {
-            progressBarVehicleOne.Value = progressBarVehicleOne.Value - 1;
+            if (vehicle1.Speed.X > 0 | vehicle1.Speed.Y > 0 | vehicle1.Speed.X < 0 | vehicle1.Speed.Y < 0)
+            {
+                progressBarVehicleOne.Value = progressBarVehicleOne.Value - 1;
+            }
+            
             if (progressBarVehicleOne.Value <= 2)
             {
 
