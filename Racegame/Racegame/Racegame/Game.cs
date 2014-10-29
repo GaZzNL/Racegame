@@ -71,7 +71,6 @@ namespace Racegame
                     vehicle2.Fuel -= vehicle2.Speed.Y;
                 if (vehicle2.Speed.Y < 0)
                     vehicle2.Fuel += vehicle2.Speed.Y;
-
             }
             catch (Exception a)
             {
@@ -119,13 +118,13 @@ namespace Racegame
                     vehicle1.Speed.Y += vehicle1.AxisSpeed;
             // Vehicle 2 Controls + Snelheid als fuel onder 10 is
             if (progressBarVehicleTwo.Value <= 10)
-                if (e.KeyCode == Keys.Left && vehicle1.Speed.X >= -minSpeed)
+                if (e.KeyCode == Keys.Left && vehicle2.Speed.X >= -minSpeed)
                     vehicle2.Speed.X -= vehicle1.AxisSpeed;
-                else if (e.KeyCode == Keys.Right && vehicle1.Speed.X <= minSpeed)
+                else if (e.KeyCode == Keys.Right && vehicle2.Speed.X <= minSpeed)
                     vehicle2.Speed.X += vehicle1.AxisSpeed;
-                else if (e.KeyCode == Keys.Up && vehicle1.Speed.Y >= -minSpeed)
+                else if (e.KeyCode == Keys.Up && vehicle2.Speed.Y >= -minSpeed)
                     vehicle2.Speed.Y -= vehicle1.AxisSpeed;
-                else if (e.KeyCode == Keys.Down && vehicle1.Speed.Y <= minSpeed)
+                else if (e.KeyCode == Keys.Down && vehicle2.Speed.Y <= minSpeed)
                     vehicle2.Speed.Y += vehicle1.AxisSpeed;
         }
         void Form1_Paint(object sender, PaintEventArgs e)
@@ -162,8 +161,8 @@ namespace Racegame
                 //Tegen het kapot gaan van onze game
                 vehicle1.getColor();
                 vehicle2.getColor();
-                progressBarVehicleOne.Value = vehicle1.Fuel;
-                progressBarVehicleTwo.Value = vehicle2.Fuel;
+                if(vehicle1.Fuel >= 0)progressBarVehicleOne.Value = vehicle1.Fuel;
+                if(vehicle2.Fuel >= 0)progressBarVehicleTwo.Value = vehicle2.Fuel;
                 Collision();
                 Invalidate();
             }

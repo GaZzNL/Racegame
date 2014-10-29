@@ -63,7 +63,6 @@ namespace Racegame
             if (Position.X < -10 | Position.Y < -10 | Position.X > 1000 | Position.Y > 710)
             {
                 respawn();
-                
             }
             //Hier word gecheckt als de voertuig zich mag verplaatsen op de locatie
             if (Position.X > 0 & Position.Y > 0 & Position.X < 990 & Position.Y < 700)
@@ -116,6 +115,8 @@ namespace Racegame
         }
         public void respawn()
         {
+            Health = 3;
+            Fuel = 100;
             Position = Spawn;
         }
     }
