@@ -169,10 +169,17 @@ namespace Racegame
         }
         public void Collision()
         {
-            if(vehicle1.Position.X == vehicle2.Position.X && vehicle1.Position.Y == vehicle2.Position.Y)
+            Point temp = new Point();
+            temp.X = (vehicle1.Position.X - vehicle2.Position.X);
+            temp.Y = (vehicle1.Position.Y - vehicle2.Position.Y);
+
+            if(temp.X < 15 && temp.Y <15 && temp.X > -15 && temp.Y > -15)
             {
-                vehicle1.Health--;
-                vehicle2.Health--;
+                Console.WriteLine("temp heeft" + temp);
+                vehicle1.Health -= 50;
+                vehicle2.Health -= 50;
+                vehicle1.checkHealth();
+                vehicle2.checkHealth();
             }
         }
     }

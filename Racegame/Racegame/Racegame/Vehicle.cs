@@ -81,7 +81,7 @@ namespace Racegame
                     //wat is de kleur van de huidige positie
                     Color kleur = image.GetPixel(Position.X, Position.Y);
                     //Debug geeft de code waar hij op staat
-                    Console.WriteLine(kleur);
+                    //Console.WriteLine(kleur);
                     //Controleer de juist locatie
                     //Gras
                     if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(128) && kleur.B.Equals(1))
