@@ -32,7 +32,7 @@ namespace Racegame
             this.Speed = new Point(0, 0);
             this.CarSize = 30;
             this.AxisSpeed = 2;
-            this.Health = 3;
+            this.Health = 300;
             this.Fuel = 100;
             //Checkt de kleur waar vehicle op positie staat(We moeten echt de GUI afschafen van Visual studio :p)
             image = new Bitmap(Racegame.Properties.Resources.map);
@@ -60,7 +60,7 @@ namespace Racegame
         public void checklocation()
         {
             //hier check je of de autos niet van het scherm rijden/ Als de voertuig "Te verweg is van de baan" word hij op de start positie gezet
-            if (Position.X < -10 | Position.Y < -10 | Position.X > 1000 | Position.Y > 710)
+            if (Position.X < -1 | Position.Y < -1 | Position.X > 1020 | Position.Y > 720)
             {
                 respawn();
             }
@@ -113,9 +113,14 @@ namespace Racegame
                 Console.WriteLine("Error met de bitmap: " + e);
             }
         }
+        public void checkHealth()
+        {
+            if (Health <= 0) 
+                respawn();
+        }
         public void respawn()
         {
-            Health = 3;
+            Health = 300;
             Fuel = 100;
             Position = Spawn;
         }

@@ -157,7 +157,7 @@ namespace Racegame
                 vehicle1.checklocation();
                 vehicle2.checklocation();
                 //De auto(als in voertuig) debugger! deze controleerd nu op de locatie
-                MousePosition.Text = (Convert.ToString(vehicle1.Position));
+                MousePosition.Text = (Convert.ToString(vehicle1.Health));
                 //Tegen het kapot gaan van onze game
                 vehicle1.getColor();
                 vehicle2.getColor();
@@ -169,7 +169,11 @@ namespace Racegame
         }
         public void Collision()
         {
-            if (vehicle1.Position == vehicle2.Position) vehicle1.Health--; vehicle1.Health--;
+            if(vehicle1.Position.X == vehicle2.Position.X && vehicle1.Position.Y == vehicle2.Position.Y)
+            {
+                vehicle1.Health--;
+                vehicle2.Health--;
+            }
         }
     }
 }
