@@ -147,8 +147,6 @@ namespace Racegame
         //Tekent de objecten op je juiste locaties
         public void Draw()
         {
-            Console.WriteLine(vehicle1.Fuel);
-            Console.WriteLine(progressBarVehicleOne.Value);
             if (Backbuffer != null)
             {
                 using (var g = Graphics.FromImage(Backbuffer))
@@ -163,7 +161,7 @@ namespace Racegame
                 MousePosition.Text = (Convert.ToString(vehicle1.Position));
                 //Tegen het kapot gaan van onze game
                 vehicle1.getColor();
-                vehicle1.getColor();
+                vehicle2.getColor();
                 progressBarVehicleOne.Value = vehicle1.Fuel;
                 progressBarVehicleTwo.Value = vehicle2.Fuel;
                 Collision();
