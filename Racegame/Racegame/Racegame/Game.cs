@@ -38,6 +38,11 @@ namespace Racegame
 
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
 
+            System.Windows.Forms.Timer decay = new System.Windows.Forms.Timer();
+            decay.Interval = 1000;
+            decay.Tick += new EventHandler(decay_tick);
+            decay.Start();
+
             vehicle1 = new Vehicle(768,70);
             vehicle2 = new Vehicle(768,118);
             progressBarVehicleOne.Value = 100;
