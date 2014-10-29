@@ -84,7 +84,6 @@ namespace Racegame
             {
                 using (var g = Graphics.FromImage(Backbuffer))
                 {
-
                     g.Clear(Color.Transparent);
                     vehicle1.Draw(g);
                     vehicle2.Draw(g, "red");
@@ -147,11 +146,14 @@ namespace Racegame
                         //Debug geeft de code waar hij op staat
                         Console.WriteLine(kleur);
                         //Gras
-                        if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(128) && kleur.B.Equals(1)) Console.WriteLine("Gras");
+                        if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(128) && kleur.B.Equals(1))
+                            Console.WriteLine("Gras");
                         //De weg
-                        if (kleur.A.Equals(255) && kleur.R.Equals(106) && kleur.G.Equals(104) && kleur.B.Equals(105)) Console.WriteLine("weg");
+                        if (kleur.A.Equals(255) && kleur.R.Equals(106) && kleur.G.Equals(104) && kleur.B.Equals(105))
+                            Console.WriteLine("weg");
                         //Pitstop
-                        if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(0) && kleur.B.Equals(206)) Console.WriteLine("Pitstop");
+                        if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(0) && kleur.B.Equals(206)) 
+                            Console.WriteLine("Pitstop");
                     }
                 }
                 catch (Exception e)
@@ -160,7 +162,6 @@ namespace Racegame
                 }
             
                 Invalidate();
-              
             }
         }
     }
