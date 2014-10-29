@@ -59,22 +59,12 @@ namespace Racegame
         }
         public void checklocation()
         {
-            //hier check je of de autos niet van het scherm rijden/ Als de voertuig "Te verweg is van de baan" word hij op de start positie gezet
-            if (Position.X < -1 | Position.Y < -1 | Position.X > 1020 | Position.Y > 720)
-            {
-                respawn();
-            }
             //Hier word gecheckt als de voertuig zich mag verplaatsen op de locatie
             if (Position.X > 0 & Position.Y > 0 & Position.X < 990 & Position.Y < 700)
             {
+
                 Position.X += Speed.X;
                 Position.Y += Speed.Y;
-            }
-            //Als de voertuig tegen de grens aanzit word hij gestopt
-            else
-            {
-                Position.X -= Speed.X;
-                Position.Y -= Speed.Y;
             }
         }
         public void getColor()
@@ -122,6 +112,8 @@ namespace Racegame
         {
             Health = 300;
             Fuel = 100;
+            Speed.X = 0;
+            Speed.Y = 0;
             Position = Spawn;
         }
     }
