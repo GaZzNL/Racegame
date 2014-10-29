@@ -46,18 +46,37 @@ namespace Racegame
             vehicle1 = new Vehicle(768,70);
             vehicle2 = new Vehicle(768,118);
             progressBarVehicleOne.Value = 100;
+            progressBarVehicleTwo.Value = 100;
         }
 
         void decay_tick(object sender, EventArgs e)
         {
-            if (vehicle1.Speed.X > 0 | vehicle1.Speed.Y > 0 | vehicle1.Speed.X < 0 | vehicle1.Speed.Y < 0)
+            try
             {
-                progressBarVehicleOne.Value = progressBarVehicleOne.Value - 1;
+                if (vehicle1.Speed.X > 0)
+                    progressBarVehicleOne.Value = progressBarVehicleOne.Value - vehicle1.Speed.X;
+                if (vehicle1.Speed.X < 0)
+                    progressBarVehicleOne.Value = progressBarVehicleOne.Value + vehicle1.Speed.X;
+                if (vehicle1.Speed.Y > 0)
+                    progressBarVehicleOne.Value = progressBarVehicleOne.Value - vehicle1.Speed.Y;
+                if (vehicle1.Speed.Y < 0)
+                    progressBarVehicleOne.Value = progressBarVehicleOne.Value + vehicle1.Speed.Y;
+                if (vehicle2.Speed.X > 0)
+                    progressBarVehicleTwo.Value = progressBarVehicleTwo.Value - vehicle2.Speed.X;
+                if (vehicle1.Speed.X < 0)
+                    progressBarVehicleTwo.Value = progressBarVehicleTwo.Value + vehicle2.Speed.X;
+                if (vehicle1.Speed.Y > 0)
+                    progressBarVehicleTwo.Value = progressBarVehicleTwo.Value - vehicle2.Speed.Y;
+                if (vehicle2.Speed.Y < 0)
+                    progressBarVehicleTwo.Value = progressBarVehicleTwo.Value + vehicle2.Speed.Y;
+                if (progressBarVehicleOne.Value <= 10)
+                    progressBarVehicleOne.Value += 10;
+                if (progressBarVehicleTwo.Value <= 10)
+                    progressBarVehicleTwo.Value += 10;
             }
-            
-            if (progressBarVehicleOne.Value <= 2)
+            catch (Exception a)
             {
-                progressBarVehicleOne.Value = progressBarVehicleOne.Value + 10;
+                Console.WriteLine("note enough fuel" + a);
             }
         }
 
