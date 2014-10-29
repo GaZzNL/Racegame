@@ -34,21 +34,21 @@ namespace Racegame
             this.AxisSpeed = 2;
             this.Health = 300;
             this.Fuel = 100;
-            //Checkt de kleur waar vehicle op positie staat(We moeten echt de GUI afschafen van Visual studio :p)
+            //Checkt de kleur waar vehicle op positie staat
             image = new Bitmap(Racegame.Properties.Resources.map);
         }
         /// <summary>
         /// Tekent het object op de juiste locatie
         /// </summary>
-        /// <param name="g">De type</param>
+        /// <param name="g">Het type</param>
         public void Draw(Graphics g)
         {
             g.FillRectangle(Brushes.Blue, this.Position.X - this.CarSize / 2, this.Position.Y - this.CarSize / 2, this.CarSize, this.CarSize);
         }
         /// <summary>
-        /// Overload van het eerdere methode
+        /// Overload van de eerdere methode
         /// </summary>
-        /// <param name="g">De type</param>
+        /// <param name="g">Het type</param>
         /// <param name="b">De kleur in string</param>
         public void Draw(Graphics g, String b)
         {
@@ -59,7 +59,7 @@ namespace Racegame
         }
         public void checklocation()
         {
-            //Hier word gecheckt als de voertuig zich mag verplaatsen op de locatie
+            //Hier word gechecktpf het voertuig zich mag verplaatsen op de locatie
             if (Position.X > 0 & Position.Y > 0 & Position.X < 1200 & Position.Y < 900)
             {
 
