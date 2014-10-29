@@ -100,7 +100,7 @@ namespace Racegame
                     if (kleur.A.Equals(255) && kleur.R.Equals(0) && kleur.G.Equals(0) && kleur.B.Equals(206))
                     {
                         Console.WriteLine("Pitstop");
-                        this.Fuel += Game.tanken();
+                        if (Fuel < 100) this.Fuel += Game.tanken();
                     }
                     if (kleur.A.Equals(255) && kleur.R.Equals(234) && kleur.G.Equals(31) && kleur.B.Equals(37))
                     {

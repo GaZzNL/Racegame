@@ -48,6 +48,7 @@ namespace Racegame
             progressBarVehicleOne.Value = vehicle1.Fuel;
             progressBarVehicleTwo.Value = vehicle2.Fuel;
 
+
         }
 
         void decay_tick(object sender, EventArgs e)
@@ -55,21 +56,21 @@ namespace Racegame
             try
             {
                 if (vehicle1.Speed.X > 0)
-                    vehicle1.Fuel = vehicle1.Fuel - vehicle1.Speed.X;
+                    vehicle1.Fuel -= vehicle1.Speed.X;
                 if (vehicle1.Speed.X < 0)
-                    vehicle1.Fuel = vehicle1.Fuel + vehicle1.Speed.X;
+                    vehicle1.Fuel += vehicle1.Speed.X;
                 if (vehicle1.Speed.Y > 0)
-                    vehicle1.Fuel = vehicle1.Fuel - vehicle1.Speed.Y;
+                    vehicle1.Fuel -= vehicle1.Speed.Y;
                 if (vehicle1.Speed.Y < 0)
-                    vehicle1.Fuel = vehicle1.Fuel + vehicle1.Speed.Y;
+                    vehicle1.Fuel += vehicle1.Speed.Y;
                 if (vehicle2.Speed.X > 0)
-                    vehicle1.Fuel = vehicle1.Fuel - vehicle2.Speed.X;
-                if (vehicle1.Speed.X < 0)
-                    vehicle1.Fuel = vehicle1.Fuel + vehicle2.Speed.X;
-                if (vehicle1.Speed.Y > 0)
-                    vehicle1.Fuel = vehicle1.Fuel - vehicle2.Speed.Y;
+                    vehicle2.Fuel -= vehicle2.Speed.X;
+                if (vehicle2.Speed.X < 0)
+                    vehicle2.Fuel += vehicle2.Speed.X;
+                if (vehicle2.Speed.Y > 0)
+                    vehicle2.Fuel -= vehicle2.Speed.Y;
                 if (vehicle2.Speed.Y < 0)
-                    vehicle1.Fuel = vehicle1.Fuel + vehicle2.Speed.Y;
+                    vehicle2.Fuel += vehicle2.Speed.Y;
 
             }
             catch (Exception a)
@@ -146,6 +147,8 @@ namespace Racegame
         //Tekent de objecten op je juiste locaties
         public void Draw()
         {
+            Console.WriteLine(vehicle1.Fuel);
+            Console.WriteLine(progressBarVehicleOne.Value);
             if (Backbuffer != null)
             {
                 using (var g = Graphics.FromImage(Backbuffer))
@@ -161,7 +164,8 @@ namespace Racegame
                 //Tegen het kapot gaan van onze game
                 vehicle1.getColor();
                 vehicle1.getColor();
-
+                progressBarVehicleOne.Value = vehicle1.Fuel;
+                progressBarVehicleTwo.Value = vehicle2.Fuel;
                 Collision();
                 Invalidate();
             }
