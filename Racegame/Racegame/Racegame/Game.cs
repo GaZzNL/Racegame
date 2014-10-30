@@ -162,6 +162,7 @@ namespace Racegame
                 if(vehicle1.Fuel >= 0)progressBarVehicleOne.Value = vehicle1.Fuel;
                 if(vehicle2.Fuel >= 0)progressBarVehicleTwo.Value = vehicle2.Fuel;
                 Collision();
+                getinfo();
                 Invalidate();
             }
         }
@@ -191,6 +192,11 @@ namespace Racegame
         public int getStatusVehicle2()
         {
             return (vehicle2.Laps);
+        }
+        public void getinfo()
+        {
+            lapsone.Text = ("Laps: " + vehicle1.Laps);
+            lapstwo.Text = ("Laps: " + vehicle2.Laps);
         }
     }
 }
